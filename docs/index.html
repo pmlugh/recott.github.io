@@ -10,6 +10,23 @@
         <!-- Bootstrap JavaScript (bundle que incluye Popper.js) -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+       <script>
+    // Configurar el tema inicial
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', currentTheme);
+
+    // Función para cambiar de tema
+    function toggleTheme(theme) {
+        document.body.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }
+
+    // Eventos de los botones
+    document.getElementById('theme-dark').addEventListener('click', () => toggleTheme('dark'));
+    document.getElementById('theme-light').addEventListener('click', () => toggleTheme('light'));
+    document.getElementById('theme-auto').addEventListener('click', () => toggleTheme('auto'));
+</script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
