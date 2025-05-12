@@ -650,24 +650,27 @@
     document.addEventListener('DOMContentLoaded', () => {
         // Cargar el tema desde localStorage o usar 'auto' por defecto
         const currentTheme = localStorage.getItem('theme') || 'auto';
-        document.documentElement.setAttribute('data-bs-theme', currentTheme);  // Establecer el tema en el HTML
+        document.documentElement.setAttribute('data-bs-theme', currentTheme);
 
         // Función para cambiar de tema
         function setTheme(theme) {
-            document.documentElement.setAttribute('data-bs-theme', theme);  // Cambiar el atributo 'data-bs-theme'
-            localStorage.setItem('theme', theme);  // Guardar el tema en localStorage
+            document.documentElement.setAttribute('data-bs-theme', theme);
+            localStorage.setItem('theme', theme);
 
             // Actualizar el estado de los botones (activos/inactivos)
             const buttons = document.querySelectorAll('.dropdown-item');
             buttons.forEach(button => {
-                if (button.getAttribute('data-bs-theme-value') === theme) {
+                const value = button.getAttribute('data-bs-theme-value');
+                const checkIcon = button.querySelector('svg:last-child'); // icono de check
+
+                if (value === theme) {
                     button.setAttribute('aria-pressed', 'true');
                     button.classList.add('active');
-                    button.querySelector('svg').classList.remove('d-none');
+                    if (checkIcon) checkIcon.classList.remove('d-none');
                 } else {
                     button.setAttribute('aria-pressed', 'false');
                     button.classList.remove('active');
-                    button.querySelector('svg').classList.add('d-none');
+                    if (checkIcon) checkIcon.classList.add('d-none');
                 }
             });
         }
@@ -676,7 +679,7 @@
         document.querySelectorAll('.dropdown-item').forEach(item => {
             item.addEventListener('click', () => {
                 const theme = item.getAttribute('data-bs-theme-value');
-                setTheme(theme);  // Cambiar el tema cuando se haga clic en un botón
+                setTheme(theme);
             });
         });
     });
