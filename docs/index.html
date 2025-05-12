@@ -643,9 +643,9 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Cargar tema desde localStorage o usar 'auto' por defecto
+        // Cargar tema desde localStorage o usar 'light' por defecto
         const currentTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-bs-theme', currentTheme);  // Establecer el tema en el HTML
+        document.documentElement.setAttribute('data-bs-theme', currentTheme);
 
         // Función para cambiar de tema
         function setTheme(theme) {
@@ -673,6 +673,13 @@
                 const theme = item.getAttribute('data-bs-theme-value');
                 setTheme(theme);  // Cambiar el tema cuando se haga clic en un botón
             });
+        });
+
+        // Añadir el controlador del menú desplegable
+        const dropdownButton = document.getElementById('bd-theme');
+        const dropdownMenu = dropdownButton.nextElementSibling;
+        dropdownButton.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('show');
         });
     });
 </script>
