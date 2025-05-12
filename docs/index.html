@@ -1,31 +1,40 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
-        <script src="https://pmlugh.github.io/recott.github.io/docs/assets/js/color-modes.js"></script>
-        <!-- CSS para pick-a-color -->
-        <link href="https://cdn.jsdelivr.net/npm/pick-a-color@1.2.3/build/1.2.3/css/pick-a-color-1.2.3.min.css" rel="stylesheet">
-        <!-- jQuery (necesario para pick-a-color) -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <!-- Script para pick-a-color -->
-        <script src="https://cdn.jsdelivr.net/npm/pick-a-color@1.2.3/build/1.2.3/js/pick-a-color-1.2.3.min.js"></script>
-        <!-- Bootstrap JavaScript (bundle que incluye Popper.js) -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Script roto, puedes eliminarlo o comentarlo -->
+    <!-- <script src="https://pmlugh.github.io/recott.github.io/docs/assets/js/color-modes.js"></script> -->
 
-       <script>
-    // Configurar el tema inicial
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    document.body.setAttribute('data-theme', currentTheme);
+    <!-- CSS para pick-a-color (si lo usas en otra parte) -->
+    <link href="https://cdn.jsdelivr.net/npm/pick-a-color@1.2.3/build/1.2.3/css/pick-a-color-1.2.3.min.css" rel="stylesheet">
 
-    // Función para cambiar de tema
-    function toggleTheme(theme) {
-        document.body.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-    }
+    <!-- jQuery (necesario para pick-a-color) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    // Eventos de los botones
-    document.getElementById('theme-dark').addEventListener('click', () => toggleTheme('dark'));
-    document.getElementById('theme-light').addEventListener('click', () => toggleTheme('light'));
-    document.getElementById('theme-auto').addEventListener('click', () => toggleTheme('auto'));
+    <!-- Script para pick-a-color -->
+    <script src="https://cdn.jsdelivr.net/npm/pick-a-color@1.2.3/build/1.2.3/js/pick-a-color-1.2.3.min.js"></script>
+
+    <!-- Bootstrap JavaScript (bundle que incluye Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script para cambiar el tema -->
+    <script>
+        // Esperar a que el DOM esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cargar tema desde localStorage o usar 'light' por defecto
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-bs-theme', currentTheme);
+
+            // Función para cambiar de tema
+            function toggleTheme(theme) {
+                document.documentElement.setAttribute('data-bs-theme', theme);
+                localStorage.setItem('theme', theme);
+            }
+
+            // Asignar eventos a los botones
+            document.getElementById('theme-dark')?.addEventListener('click', () => toggleTheme('dark'));
+            document.getElementById('theme-light')?.addEventListener('click', () => toggleTheme('light'));
+            document.getElementById('theme-auto')?.addEventListener('click', () => toggleTheme('auto'));
+        }); 
 </script>
 
     <meta charset="utf-8">
