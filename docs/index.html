@@ -644,16 +644,16 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Cargar el tema desde localStorage o usar 'auto' por defecto
+        // Cargar el tema desde localStorage o usar 'dark' por defecto
         const currentTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-bs-theme', currentTheme);  // Establecer el tema en el HTML
+        document.documentElement.setAttribute('data-bs-theme', currentTheme);
 
         // Función para cambiar de tema
         function setTheme(theme) {
-            document.documentElement.setAttribute('data-bs-theme', theme);  // Cambiar el atributo 'data-bs-theme'
-            localStorage.setItem('theme', theme);  // Guardar el tema en localStorage
+            document.documentElement.setAttribute('data-bs-theme', theme);
+            localStorage.setItem('theme', theme);
 
-            // Actualizar el estado de los botones (activos/inactivos)
+            // Actualizar el estado de los botones
             const buttons = document.querySelectorAll('.dropdown-item');
             buttons.forEach(button => {
                 if (button.getAttribute('data-bs-theme-value') === theme) {
@@ -672,7 +672,7 @@
         document.querySelectorAll('.dropdown-item').forEach(item => {
             item.addEventListener('click', () => {
                 const theme = item.getAttribute('data-bs-theme-value');
-                setTheme(theme);  // Cambiar el tema cuando se haga clic en un botón
+                setTheme(theme);
             });
         });
     });
