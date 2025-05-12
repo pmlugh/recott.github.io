@@ -1,678 +1,809 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head>
-     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- jQuery (necesario para Bootstrap) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<head>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap JavaScript (bundle que incluye Popper.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery (necesario para Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Script para pick-a-color (si lo usas en otra parte) -->
-    <link href="https://cdn.jsdelivr.net/npm/pick-a-color@1.2.3/build/1.2.3/css/pick-a-color-1.2.3.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/pick-a-color@1.2.3/build/1.2.3/js/pick-a-color-1.2.3.min.js"></script>    
+  <!-- Bootstrap JavaScript (bundle que incluye Popper.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script para cambiar el tema -->
-    <script>
-        // Esperar a que el DOM esté listo
-        document.addEventListener('DOMContentLoaded', () => {
-            // Cargar tema desde localStorage o usar 'light' por defecto
-            const currentTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-bs-theme', currentTheme);
+  <!-- Script para pick-a-color (si lo usas en otra parte) -->
+  <link href="https://cdn.jsdelivr.net/npm/pick-a-color@1.2.3/build/1.2.3/css/pick-a-color-1.2.3.min.css"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/pick-a-color@1.2.3/build/1.2.3/js/pick-a-color-1.2.3.min.js"></script>
 
-            // Función para cambiar de tema
-            function toggleTheme(theme) {
-                document.documentElement.setAttribute('data-bs-theme', theme);
-                localStorage.setItem('theme', theme);
-            }
+  <!-- Script para cambiar el tema -->
+  <script>
+    // Esperar a que el DOM esté listo
+    document.addEventListener('DOMContentLoaded', () => {
+      // Cargar tema desde localStorage o usar 'light' por defecto
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-bs-theme', currentTheme);
 
-            // Asignar eventos a los botones
-            document.getElementById('theme-dark')?.addEventListener('click', () => toggleTheme('dark'));
-            document.getElementById('theme-light')?.addEventListener('click', () => toggleTheme('light'));
-            document.getElementById('theme-auto')?.addEventListener('click', () => toggleTheme('auto'));
-        }); 
-</script>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
-    <title>RECOTT servicios</title>
-
-    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet"> --> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+      // Función para cambiar de tema
+      function toggleTheme(theme) {
+        document.documentElement.setAttribute('data-bs-theme', theme);
+        localStorage.setItem('theme', theme);
       }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
+      // Asignar eventos a los botones
+      document.getElementById('theme-dark')?.addEventListener('click', () => toggleTheme('dark'));
+      document.getElementById('theme-light')?.addEventListener('click', () => toggleTheme('light'));
+      document.getElementById('theme-auto')?.addEventListener('click', () => toggleTheme('auto'));
+    }); 
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.122.0">
+  <title>RECOTT servicios</title>
+
+  <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
+    }
 
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, 0.15);
-        border: solid rgba(0, 0, 0, 0.15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, 0.15);
+      border: solid rgba(0, 0, 0, 0.15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
 
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
 
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
 
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
 
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
 
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
 
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-    </style>
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+  </style>
 
-    
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="blog.css" rel="stylesheet">
-  </head>
-  <body>
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="check2" viewBox="0 0 16 16">
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-      </symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-      </symbol>
-    </svg>
 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="blog.css" rel="stylesheet">
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
+
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+          aria-pressed="true">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+      stroke-width="2" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
+    </symbol>
+    <symbol id="cart" viewBox="0 0 16 16">
+      <path
+        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+    </symbol>
+    <symbol id="chevron-right" viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+    </symbol>
+  </svg>
+
+  <!-- Código alterno de navegación -->
+  <div class="container">
+    <header class="border-bottom lh-1 py-3">
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary mt-0">
+        <!--<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> -->
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="LogoFace1.jpg" width="80" height="30">
+            <img src="cpu-fill.svg" width="80" height="30" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-    
-<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-  <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="10"/>
-    <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/>
-  </symbol>
-  <symbol id="cart" viewBox="0 0 16 16">
-    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-  </symbol>
-  <symbol id="chevron-right" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-  </symbol>
-</svg>
-
-<!-- Código alterno de navegación -->
-  <div class="container"> 
-  <header class="border-bottom lh-1 py-3">
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary mt-0">
-  <!--<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> -->   
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">        
-        <img src="LogoFace1.jpg" width="80" height="30">
-        <img src="cpu-fill.svg" width="80" height="30" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent2">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
-            <a class="nav-link" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#Nuestro Portafolio">Portafolio</a>
-            <meta>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#Soluciones">Soluciones</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#Blogger">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#Nuestros Eventos">Eventos</a>
-          </li>                  
-        </ul>        
-      </div>
-    </div>
-  </div>    
+          <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Nuestro Portafolio">Portafolio</a>
+                <meta>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Soluciones">Soluciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Blogger">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Nuestros Eventos">Eventos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+  </div>
   </nav>
   </header>
 
-<br>
-<br>
+  <br>
+  <br>
 
   <main class="container">
-  <div class="p-4 p-md-5 mb-3 rounded text-body-emphasis bg-body-secondary">
-    <div class="col-lg-9 px-5">
-      <h1 class="display-4 fst-italic">Welcome to</h1>
-      <h1 class="display-5 fst-italic">RECOTT servicios</h1>
-      <p class="lead my-0">&nbsp;&nbsp;"Integramos servicios de Tecnología, brindando seguridad y respaldo."</p>
-      <p class="lead my-0">&nbsp;&nbsp;"Nuestro diferenciador - "Servicio al cliente".</p>
+    <div class="p-4 p-md-5 mb-3 rounded text-body-emphasis bg-body-secondary">
+      <div class="col-lg-9 px-5">
+        <h1 class="display-4 fst-italic">Welcome to</h1>
+        <h1 class="display-5 fst-italic">RECOTT servicios</h1>
+        <p class="lead my-0">&nbsp;&nbsp;"Integramos servicios de Tecnología, brindando seguridad y respaldo."</p>
+        <p class="lead my-0">&nbsp;&nbsp;"Nuestro diferenciador - "Servicio al cliente".</p>
+      </div>
     </div>
-  </div>
-    
-  <!-- <h3 class="pb-4 mb-4 fst-italic border-bottom"> -->
-        <h2 class="pb-4 mb-4 fst-italic border-bottom" id="Nuestro Portafolio">Nuestro Portafolio</h2>        
-  <!--     </h3> -->
 
-  <!-- Tecnologías de la Información -->
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-4 text-primary-emphasis"><left>Consultoría</left></strong>
-          <h3 class="mb-0">Tecnologías de la Información</h3>        
+    <!-- <h3 class="pb-4 mb-4 fst-italic border-bottom"> -->
+    <h2 class="pb-4 mb-4 fst-italic border-bottom" id="Nuestro Portafolio">Nuestro Portafolio</h2>
+    <!--     </h3> -->
+
+    <!-- Tecnologías de la Información -->
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-4 text-primary-emphasis">
+              <left>Consultoría</left>
+            </strong>
+            <h3 class="mb-0">Tecnologías de la Información</h3>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="PortConsultTI_1.jpeg" class="d-block mx-lg-auto img-fluid" width="300" height="200"
+              loading="lazy">
+          </div>
         </div>
-        <div class="col-auto d-none d-lg-block">
-          <img src="PortConsultTI_1.jpeg" class="d-block mx-lg-auto img-fluid" width="300" height="200" loading="lazy">
+      </div>
+      <!-- Integración de servicios TI -->
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-4 text-success-emphasis">
+              <left>Integración</left>
+            </strong>
+            <h3 class="mb-0">Servicios TI con proveedores</h3>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="PortIntegraTI_2.jpeg" class="d-block mx-lg-auto img-fluid" width="300" height="200"
+              loading="lazy">
+          </div>
         </div>
       </div>
     </div>
-    <!-- Integración de servicios TI -->
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-4 text-success-emphasis"><left>Integración</left></strong>
-          <h3 class="mb-0">Servicios TI con proveedores</h3>
+    <!-- Administración deproyectos -->
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-4 text-primary-emphasis">
+              <left>Admin. y Control</left>
+            </strong>
+            <h3 class="mb-0">Project Management Dev/Infra</h3>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="PortNuestroServicio_1.jpeg" class="d-block mx-lg-auto img-fluid" width="300" height="200"
+              loading="lazy">
+          </div>
         </div>
-        <div class="col-auto d-none d-lg-block">
-          <img src="PortIntegraTI_2.jpeg" class="d-block mx-lg-auto img-fluid" width="300" height="200" loading="lazy">          
+      </div>
+      <!-- Reclutamiento y selección TI -->
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-4 text-success-emphasis">
+              <left>Reclutamiento</left>
+            </strong>
+            <h3 class="mb-0">Reclutamiento y selección TI</h3>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="5e9e5ff5b2ad5.jpg" class="d-block mx-lg-auto img-fluid" width="300" height="200" loading="lazy">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Administración deproyectos -->
-  <div class="row mb-2"> 
-  <div class="col-md-6">
-    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
-      <div class="col p-4 d-flex flex-column position-static">
-        <strong class="d-inline-block mb-4 text-primary-emphasis"><left>Admin. y Control</left></strong>
-        <h3 class="mb-0">Project Management Dev/Infra</h3>                 
-      </div>
-      <div class="col-auto d-none d-lg-block">
-        <img src="PortNuestroServicio_1.jpeg" class="d-block mx-lg-auto img-fluid" width="300" height="200" loading="lazy">
-      </div>
-    </div>
-  </div>
-  <!-- Reclutamiento y selección TI -->
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-4 text-success-emphasis"><left>Reclutamiento</left></strong>
-          <h3 class="mb-0">Reclutamiento y selección TI</h3>           
-        </div>
-        <div class="col-auto d-none d-lg-block">
-         <img src="5e9e5ff5b2ad5.jpg" class="d-block mx-lg-auto img-fluid" width="300" height="200" loading="lazy">
+    <!-- Soporte técnico -->
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-4 text-primary-emphasis">
+              <left>Soporte</left>
+            </strong>
+            <h3 class="mb-0">Soporte Técnico y SLA</h3>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="PortSoporteTec_1.jpeg" class="d-block mx-lg-auto img-fluid" width="300" height="200"
+              loading="lazy">
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- Soporte técnico -->
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-4 text-primary-emphasis"><left>Soporte</left></strong>
-          <h3 class="mb-0">Soporte Técnico y SLA</h3>                    
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img src="PortSoporteTec_1.jpeg" class="d-block mx-lg-auto img-fluid" width="300" height="200" loading="lazy">
+      <!-- Espacios y rendimiento -->
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-4 text-success-emphasis">
+              <left>Optimización</left>
+            </strong>
+            <h3 class="mb-0">Espacios y rendimiento</h3>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="PortEspaciosRend_2.jpeg" class="d-block mx-lg-auto img-fluid" width="300" height="200"
+              loading="lazy">
+          </div>
         </div>
       </div>
     </div>
-    <!-- Espacios y rendimiento -->
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-4 text-success-emphasis"><left>Optimización</left></strong>
-          <h3 class="mb-0">Espacios y rendimiento</h3>           
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img src="PortEspaciosRend_2.jpeg" class="d-block mx-lg-auto img-fluid" width="300" height="200" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </div>
 
-    
-  <!-- <div class="row g-5">
-    <div class="col-md-8"> -->
-      
-    <h2 class="pb-4 mb-4 fst-italic border-bottom" id="Soluciones">Soluciones</h2>           
-      
-      <!-- <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> -->  
-      <a class=" d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-high py-3 link-body-emphasis text-decoration-none href="#"> 
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
-          <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5"/>
-          <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z"/>
-        </svg>          
-    <div>
-        <h3 class="fs-2 text-body-emphasis" color="FFF000">Servicios de Consultoría</h3> 
-        <p>Consultoría y asesoramiento sobre iniciativas de Tecnología, procesos y modelos de negocio.</p>
-    </div>
-    </a>      
 
-      <!-- <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> -->  
-      <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-high py-3 link-body-emphasis text-decoration-none href="#">  
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-boxes" viewBox="0 0 16 16">
-          <path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434zM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567zM7.5 9.933l-2.75 1.571v3.134l2.75-1.571zm1 3.134 2.75 1.571v-3.134L8.5 9.933zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567zm2.242-2.433V3.504L8.5 5.076V8.21zM7.5 8.21V5.076L4.75 3.504v3.134zM5.258 2.643 8 4.21l2.742-1.567L8 1.076zM15 9.933l-2.75 1.571v3.134L15 13.067zM3.75 14.638v-3.134L1 9.933v3.134z"/>
-        </svg>
-    <div>
-        <h3 class="fs-2 text-body-emphasis" color="FFF000">Servicios de Integración</h3> 
-        <p>Investigación de proveedores, así como las mejores soluciones en el mercado que se adapten a su negocio.</p>
-    </div>
-    </a>     
-  
-  <!-- <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> -->  
-    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-high py-3 link-body-emphasis text-decoration-none href="#">  
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-building-gear" viewBox="0 0 16 16">
-        <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1z"/>
-        <path d="M4.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.386 1.46c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0"/>
-      </svg>           
-    <div>
-        <h3 class="fs-2 text-body-emphasis" color="FFF000">Servicios de Administración de Proyectos</h3> 
-        <p>Administración y control de proyectos para su entrega en tiempo y forma.</p>
-    </div>
-    </a>   
-  
-  <!-- <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> -->  
-    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-high py-3 link-body-emphasis text-decoration-none href="#">  
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-fill-up" viewBox="0 0 16 16">
-        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.854 1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 0 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.708l1.5-1.5a.5.5 0 0 1 .708 0M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-        <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
-      </svg>         
-    <div>
-        <h3 class="fs-2 text-body-emphasis" color="FFF000">Servicios de Reclutamiento y Selección</h3> 
-        <p>Nos especializamos en seleccionar los mejores perfiles de TI para su negocio.</p>
-    </div>
-    </a>   
+    <div class="row g-5">
+      <div class="col-md-8">
 
-  <!-- <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> -->  
-    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-high py-3 link-body-emphasis text-decoration-none href="#">  
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-umbrella-fill" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M8 0a.5.5 0 0 1 .5.5v.514C12.625 1.238 16 4.22 16 8c0 0 0 .5-.5.5-.149 0-.352-.145-.352-.145l-.004-.004-.025-.023a3.5 3.5 0 0 0-.555-.394A3.17 3.17 0 0 0 13 7.5c-.638 0-1.178.213-1.564.434a3.5 3.5 0 0 0-.555.394l-.025.023-.003.003s-.204.146-.353.146-.352-.145-.352-.145l-.004-.004-.025-.023a3.5 3.5 0 0 0-.555-.394 3.3 3.3 0 0 0-1.064-.39V13.5H8h.5v.039l-.005.083a3 3 0 0 1-.298 1.102 2.26 2.26 0 0 1-.763.88C7.06 15.851 6.587 16 6 16s-1.061-.148-1.434-.396a2.26 2.26 0 0 1-.763-.88 3 3 0 0 1-.302-1.185v-.025l-.001-.009v-.003s0-.002.5-.002h-.5V13a.5.5 0 0 1 1 0v.506l.003.044a2 2 0 0 0 .195.726c.095.191.23.367.423.495.19.127.466.229.879.229s.689-.102.879-.229c.193-.128.328-.304.424-.495a2 2 0 0 0 .197-.77V7.544a3.3 3.3 0 0 0-1.064.39 3.5 3.5 0 0 0-.58.417l-.004.004S5.65 8.5 5.5 8.5s-.352-.145-.352-.145l-.004-.004a3.5 3.5 0 0 0-.58-.417A3.17 3.17 0 0 0 3 7.5c-.638 0-1.177.213-1.564.434a3.5 3.5 0 0 0-.58.417l-.004.004S.65 8.5.5 8.5C0 8.5 0 8 0 8c0-3.78 3.375-6.762 7.5-6.986V.5A.5.5 0 0 1 8 0"/>
-      </svg>           
-    <div>
-        <h3 class="fs-2 text-body-emphasis" color="FFF000">Servicios de Soporte Técnico</h3> 
-        <p>Integramos pólizas de soporte con los mejores proveedores de servicios.</p>
-    </div>
-    </a>   
+        <h2 class="pb-4 mb-4 fst-italic border-bottom" id="Soluciones">Soluciones</h2>
 
-  <!-- <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> -->  
-    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-high py-3 link-body-emphasis text-decoration-none href="#">  
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cup-hot-fill" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M.5 6a.5.5 0 0 0-.488.608l1.652 7.434A2.5 2.5 0 0 0 4.104 16h5.792a2.5 2.5 0 0 0 2.44-1.958l.131-.59a3 3 0 0 0 1.3-5.854l.221-.99A.5.5 0 0 0 13.5 6zM13 12.5a2 2 0 0 1-.316-.025l.867-3.898A2.001 2.001 0 0 1 13 12.5"/>
-        <path d="m4.4.8-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 3.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 3.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 3 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 4.4.8m3 0-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 6.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 6.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 6 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 7.4.8m3 0-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.252.382l-.019.025-.005.008-.002.002A.5.5 0 0 1 9.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 9.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 9 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 10.4.8"/>
-      </svg>           
-    <div>
-        <h3 class="fs-2 text-body-emphasis" color="FFF000">Servicios de Espacios y Rendimiento</h3> 
-        <p>Asesoramiento en el manejo de espacios y rendimiento para su personal.</p>
-    </div>
-    </a>   
+        <!-- <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> -->
+        <a class=" d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-high py-3 link-body-emphasis text-decoration-none href="
+          #">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+            class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+            <path
+              d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5" />
+            <path
+              d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85z" />
+          </svg>
+          <div>
+            <h3 class="fs-2 text-body-emphasis" color="FFF000">Servicios de Consultoría</h3>
+            <p>Consultoría y asesoramiento sobre iniciativas de Tecnología, procesos y modelos de negocio.</p>
+          </div>
+        </a>
 
-    <h2 class="pb-4 mb-4 fst-italic border-bottom" id="Blogger">Nuestro Blog</h2>
+        <!-- <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> -->
+        <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-high py-3 link-body-emphasis text-decoration-none href="
+          #">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-boxes"
+            viewBox="0 0 16 16">
+            <path
+              d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434zM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567zM7.5 9.933l-2.75 1.571v3.134l2.75-1.571zm1 3.134 2.75 1.571v-3.134L8.5 9.933zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567zm2.242-2.433V3.504L8.5 5.076V8.21zM7.5 8.21V5.076L4.75 3.504v3.134zM5.258 2.643 8 4.21l2.742-1.567L8 1.076zM15 9.933l-2.75 1.571v3.134L15 13.067zM3.75 14.638v-3.134L1 9.933v3.134z" />
+          </svg>
+          <div>
+            <h3 class="fs-2 text-body-emphasis" color="FFF000">Servicios de Integración</h3>
+            <p>Investigación de proveedores, así como las mejores soluciones en el mercado que se adapten a su negocio.
+            </p>
+          </div>
+        </a>
 
-      <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none href="#">
-        <img src="5e9e60e96114f.png" width="324" height="183" alt="">
-        <div class="col-lg-6">
-          <h6 class="mb-3">PM como STAFF - Reúnete con tu Project Manager antes de comenzar cualquier proyecto. Identifica los riesgos y cuida la estimación de tiempos y esfuerzos para estructurar y organizar de manera óptima todas tus iniciativas.</h6>
-          <small class="text-body-secondary">January, 2025</small>
-        </div>
-      </a>
+        <!-- <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> -->
+        <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-high py-3 link-body-emphasis text-decoration-none href="
+          #">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-building-gear"
+            viewBox="0 0 16 16">
+            <path
+              d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1z" />
+            <path
+              d="M4.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.386 1.46c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
+          </svg>
+          <div>
+            <h3 class="fs-2 text-body-emphasis" color="FFF000">Servicios de Administración de Proyectos</h3>
+            <p>Administración y control de proyectos para su entrega en tiempo y forma.</p>
+          </div>
+        </a>
 
-      <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none href="#">
-        <img src="5e9e6038c3cad.png" width="324" height="183" alt="">
-        <div class="col-lg-6">
-          <h6 class="mb-3">Tecnología / IA - La tecnología de punta realmente puede ayudar a resolver los problemas de mi negocio. Sin embargo, en ocasiones es necesario primero analizar los procesos para identificar las fallas; después podremos implementar la tecnología necesaria para el negocio.</h6>
-          <small class="text-body-secondary">January, 2025</small>
-        </div>
-      </a>
+        <!-- <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> -->
+        <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-high py-3 link-body-emphasis text-decoration-none href="
+          #">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+            class="bi bi-person-fill-up" viewBox="0 0 16 16">
+            <path
+              d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.854 1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 0 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.708l1.5-1.5a.5.5 0 0 1 .708 0M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+            <path
+              d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+          </svg>
+          <div>
+            <h3 class="fs-2 text-body-emphasis" color="FFF000">Servicios de Reclutamiento y Selección</h3>
+            <p>Nos especializamos en seleccionar los mejores perfiles de TI para su negocio.</p>
+          </div>
+        </a>
 
-      <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none href="#">
-        <img src="5e9e656db8733.png" width="324" height="183" alt="">
-        <div class="col-lg-6">
-          <h6 class="mb-3">Espacios y Rendimiento - ¿La organización y decoración de tus oficinas proporcionan el ambiente y la comodidad justos para generar el rendimiento y la concentración necesarios para tus recursos?.</h6>
-          <small class="text-body-secondary">January, 2025</small>
-        </div>
-      </a>
-          
-    <h2 class="pb-4 mb-4 fst-italic border-bottom" id="Nuestros Eventos">Nuestros Eventos</h2>
+        <!-- <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> -->
+        <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-high py-3 link-body-emphasis text-decoration-none href="
+          #">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-umbrella-fill"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M8 0a.5.5 0 0 1 .5.5v.514C12.625 1.238 16 4.22 16 8c0 0 0 .5-.5.5-.149 0-.352-.145-.352-.145l-.004-.004-.025-.023a3.5 3.5 0 0 0-.555-.394A3.17 3.17 0 0 0 13 7.5c-.638 0-1.178.213-1.564.434a3.5 3.5 0 0 0-.555.394l-.025.023-.003.003s-.204.146-.353.146-.352-.145-.352-.145l-.004-.004-.025-.023a3.5 3.5 0 0 0-.555-.394 3.3 3.3 0 0 0-1.064-.39V13.5H8h.5v.039l-.005.083a3 3 0 0 1-.298 1.102 2.26 2.26 0 0 1-.763.88C7.06 15.851 6.587 16 6 16s-1.061-.148-1.434-.396a2.26 2.26 0 0 1-.763-.88 3 3 0 0 1-.302-1.185v-.025l-.001-.009v-.003s0-.002.5-.002h-.5V13a.5.5 0 0 1 1 0v.506l.003.044a2 2 0 0 0 .195.726c.095.191.23.367.423.495.19.127.466.229.879.229s.689-.102.879-.229c.193-.128.328-.304.424-.495a2 2 0 0 0 .197-.77V7.544a3.3 3.3 0 0 0-1.064.39 3.5 3.5 0 0 0-.58.417l-.004.004S5.65 8.5 5.5 8.5s-.352-.145-.352-.145l-.004-.004a3.5 3.5 0 0 0-.58-.417A3.17 3.17 0 0 0 3 7.5c-.638 0-1.177.213-1.564.434a3.5 3.5 0 0 0-.58.417l-.004.004S.65 8.5.5 8.5C0 8.5 0 8 0 8c0-3.78 3.375-6.762 7.5-6.986V.5A.5.5 0 0 1 8 0" />
+          </svg>
+          <div>
+            <h3 class="fs-2 text-body-emphasis" color="FFF000">Servicios de Soporte Técnico</h3>
+            <p>Integramos pólizas de soporte con los mejores proveedores de servicios.</p>
+          </div>
+        </a>
 
-    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none href="#">
-      <img src="2b43f06c3206438c8924022eac3d59b9.jpg" width="324" height="183" alt="">
-      <div class="col-lg-6">
-        <h6 class="mb-3">Trekking - Modalidad de excursionismo que consiste en recorrer a pie largas distancias o zonas determinadas, generalmente de alta montaña y poco frecuentadas por el turismo convencional.</h6>
-        <small class="text-body-secondary">January, 2025</small>
-      </div>
-    </a>
+        <!-- <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"> -->
+        <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-high py-3 link-body-emphasis text-decoration-none href="
+          #">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cup-hot-fill"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M.5 6a.5.5 0 0 0-.488.608l1.652 7.434A2.5 2.5 0 0 0 4.104 16h5.792a2.5 2.5 0 0 0 2.44-1.958l.131-.59a3 3 0 0 0 1.3-5.854l.221-.99A.5.5 0 0 0 13.5 6zM13 12.5a2 2 0 0 1-.316-.025l.867-3.898A2.001 2.001 0 0 1 13 12.5" />
+            <path
+              d="m4.4.8-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 3.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 3.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 3 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 4.4.8m3 0-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 6.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 6.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 6 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 7.4.8m3 0-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.252.382l-.019.025-.005.008-.002.002A.5.5 0 0 1 9.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 9.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 9 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 10.4.8" />
+          </svg>
+          <div>
+            <h3 class="fs-2 text-body-emphasis" color="FFF000">Servicios de Espacios y Rendimiento</h3>
+            <p>Asesoramiento en el manejo de espacios y rendimiento para su personal.</p>
+          </div>
+        </a>
 
-    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none href="#">
-      <img src="20230728_hiking-with-dogs-17-scaled.jpg" width="324" height="183" alt="">
-      <div class="col-lg-6">
-        <h6 class="mb-3">Trekking with Dogs - Modalidad de excursionismo que consiste en recorrer a pie largas distancias o zonas determinadas, generalmente de alta montaña y poco frecuentadas por el turismo convencional, con perros.</h6>
-        <small class="text-body-secondary">January, 2025</small>
-      </div>
-    </a>
+        <h2 class="pb-4 mb-4 fst-italic border-bottom" id="Blogger">Nuestro Blog</h2>
 
-    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none href="#">
-      <img src="f5de92a611ea4bc086322c9a20e715b1.jpg" width="324" height="183" alt="">
-      <div class="col-lg-6">
-        <h6 class="mb-3">Gravel Bike - El gravel es una modalidad de ciclismo que se práctica sobre una bicicleta que se parece en su geometría a las bicis de carretera de gran fondo, también con manillar curvo, pero con el cuadro y las ruedas adaptadas para poder ser utilizadas también fuera del asfalto.</h6>
-        <small class="text-body-secondary">January, 2025</small>
-      </div>
-    </a>
+        <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none href="
+          #">
+          <img src="5e9e60e96114f.png" width="324" height="183" alt="">
+          <div class="col-lg-6">
+            <h6 class="mb-3">PM como STAFF - Reúnete con tu Project Manager antes de comenzar cualquier proyecto.
+              Identifica los riesgos y cuida la estimación de tiempos y esfuerzos para estructurar y organizar de manera
+              óptima todas tus iniciativas.</h6>
+            <small class="text-body-secondary">January, 2025</small>
+          </div>
+        </a>
+
+        <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none href="
+          #">
+          <img src="5e9e6038c3cad.png" width="324" height="183" alt="">
+          <div class="col-lg-6">
+            <h6 class="mb-3">Tecnología / IA - La tecnología de punta realmente puede ayudar a resolver los problemas de
+              mi negocio. Sin embargo, en ocasiones es necesario primero analizar los procesos para identificar las
+              fallas; después podremos implementar la tecnología necesaria para el negocio.</h6>
+            <small class="text-body-secondary">January, 2025</small>
+          </div>
+        </a>
+
+        <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none href="
+          #">
+          <img src="5e9e656db8733.png" width="324" height="183" alt="">
+          <div class="col-lg-6">
+            <h6 class="mb-3">Espacios y Rendimiento - ¿La organización y decoración de tus oficinas proporcionan el
+              ambiente y la comodidad justos para generar el rendimiento y la concentración necesarios para tus
+              recursos?.</h6>
+            <small class="text-body-secondary">January, 2025</small>
+          </div>
+        </a>
+
+        <h2 class="pb-4 mb-4 fst-italic border-bottom" id="Nuestros Eventos">Nuestros Eventos</h2>
+
+        <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none href="
+          #">
+          <img src="2b43f06c3206438c8924022eac3d59b9.jpg" width="324" height="183" alt="">
+          <div class="col-lg-6">
+            <h6 class="mb-3">Trekking - Modalidad de excursionismo que consiste en recorrer a pie largas distancias o
+              zonas determinadas, generalmente de alta montaña y poco frecuentadas por el turismo convencional.</h6>
+            <small class="text-body-secondary">January, 2025</small>
+          </div>
+        </a>
+
+        <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none href="
+          #">
+          <img src="20230728_hiking-with-dogs-17-scaled.jpg" width="324" height="183" alt="">
+          <div class="col-lg-6">
+            <h6 class="mb-3">Trekking with Dogs - Modalidad de excursionismo que consiste en recorrer a pie largas
+              distancias o zonas determinadas, generalmente de alta montaña y poco frecuentadas por el turismo
+              convencional, con perros.</h6>
+            <small class="text-body-secondary">January, 2025</small>
+          </div>
+        </a>
+
+        <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none href="
+          #">
+          <img src="f5de92a611ea4bc086322c9a20e715b1.jpg" width="324" height="183" alt="">
+          <div class="col-lg-6">
+            <h6 class="mb-3">Gravel Bike - El gravel es una modalidad de ciclismo que se práctica sobre una bicicleta
+              que se parece en su geometría a las bicis de carretera de gran fondo, también con manillar curvo, pero con
+              el cuadro y las ruedas adaptadas para poder ser utilizadas también fuera del asfalto.</h6>
+            <small class="text-body-secondary">January, 2025</small>
+          </div>
+        </a>
 
         <article class="blog-post">
-          <h2 class="display-12 link-body-emphasis mb-1">Resumen...</h2>        
-          <p>Actividades de recreación que elevan el espíritu, generan relajación garantizada y descanso integral. Para retomar las actividades cotidianas con entusiasmo y productividad al 100%.</p>
+          <h2 class="display-12 link-body-emphasis mb-1">Resumen...</h2>
+          <p>Actividades de recreación que elevan el espíritu, generan relajación garantizada y descanso integral. Para
+            retomar las actividades cotidianas con entusiasmo y productividad al 100%.</p>
         </article>
 
-      <nav class="blog-pagination" aria-label="Pagination">
-        <a class="btn btn-outline-primary rounded-pill" href="#">Top</a>
-        <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
-      </nav>
+        <nav class="blog-pagination" aria-label="Pagination">
+          <a class="btn btn-outline-primary rounded-pill" href="#">Top</a>
+          <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
+        </nav>
 
+      </div>
+
+      <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          <div class="p-4 mb-3 bg-body-tertiary rounded">
+            <h4 class="fst-italic">Acerca de nuestro servicio:</h4>
+            <p class="mb-0">Asesorar a nuestros clientes sobre Tecnologías de la Información, con el objetivo de que
+              tomen las mejores decisiones que les proporcionen valor agregado a sus procesos y vean su costo beneficio
+              de forma tangible.</p>
+            <p class="mb-0">-------------------------------</p>
+            <dt> - Más de 25 años nos respaldan en el ramo de las TIC´s. - </dt>
+          </div>
+
+          <div>
+            <h4 class="fst-italic">Nuestros proyectos</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                  href="#">
+                  <img src="Serv_METHOD_2.png" width="120" height="96" alt="">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">METHOD - Implementamos y acoplamos la metodología que mejor se adapte a las
+                      necesidades de tu organización.</h6>
+                    <small class="text-body-secondary">January, 2023</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                  href="#">
+                  <img src="Serv_DEV_1.png" width="120" height="96" alt="">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">DEV - Desarrollamos software a la medida y damos mantenimiento a los sistemas
+                      existentes.</h6>
+                    <small class="text-body-secondary">November, 2020</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                  href="#">
+                  <img src="Serv_AUTOMA_1.png" width="120" height="96" alt="">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">BPA, RPA y DPA - Automatiza tus procesos, optimizando tiempos y esfuerzo para un
+                      mejor desempeño y servicio.</h6>
+                    <small class="text-body-secondary">October, 2023</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                  href="#">
+                  <img src="Serv_BMS_1.png" width="120" height="96" alt="">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">BMS - Building Management System, gestiona tus edificaciones, por medio de software
+                      y hardware para una mejor supervisión y control.</h6>
+                    <small class="text-body-secondary">April, 2021</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                  href="#">
+                  <img src="Serv_GPS_1.png" width="120" height="96" alt="">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">GPS Monitor - Monitorea tus unidades mediante GPS y sensores que te alertan
+                      dependiendo tus necesidades.</h6>
+                    <small class="text-body-secondary">October, 2023</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                  href="#">
+                  <img src="Serv_TELEM_1.png" width="120" height="96" alt="">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">TELEMETRÍA - Tecnología que permite la medición remota de magnitudes físicas y el
+                      posterior envío de la información hacia el operador del sistema.</h6>
+                    <small class="text-body-secondary">April, 2021</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                  href="#">
+                  <img src="Serv_INFRA_1.png" width="120" height="96" alt="">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">INFRA TI - Implementamos, auditamos y asesoramos sobre tu infraestructura de TI.
+                    </h6>
+                    <small class="text-body-secondary">October, 2023</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                  href="#">
+                  <img src="Serv_NOC_1.png" width="120" height="96" alt="">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">NOC - Network Operation Center. Centro de control centralizado para supervisar y
+                      gestionar sistemas informáticos, de telecomunicaciones o de redes de una organización.</h6>
+                    <small class="text-body-secondary">October, 2023</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                  href="#">
+                  <img src="Serv_CONSUL_1.png" width="120" height="96" alt="">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">CONSULTORÍA - Solicita de inicio la consultoría necesaria para cubrir tus
+                      necesidades de la mejor forma.</h6>
+                    <small class="text-body-secondary">April, 2021</small>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+  </main>
+
+  <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+    href="#"></a>
+
+  <footer class="container py-7">
+    <div class="row">
+      <div class="col-12 col-md">
+        &nbsp;&nbsp;<img src="LogoFace1.jpg" alt="" width="80" height="30">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg> -->
+        <small class="d-block mb-3 text-body-secondary">&copy; 2008–2024</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Dirección / contacto</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary text-decoration-none">Valle de moreno S/N, Priv. del Rey.</a></li>
+          <li><a class="link-secondary text-decoration-none">Hermosillo, Sonora 83118, MX.</a></li>
+          <li><a class="link-secondary text-decoration-none">Tels.: 662-342-5565</a></li>
+          <li><a class="link-secondary text-decoration-none">Tels.: 473-171-4458</a></li>
+          <li><a class="link-secondary text-decoration-none">recottservicios@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md">
+        <h5>Síguenos en:</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary text-decoration-none" href="https://www.facebook.com/recottintegrador"><svg
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook"
+                viewBox="0 0 16 16">
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+              </svg>&nbsp;Facebook</a></li>
+          <li><a class="link-secondary text-decoration-none"
+              href="https://www.linkedin.com/company/recott-servicios/"><svg xmlns="http://www.w3.org/2000/svg"
+                width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                <path
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+              </svg>&nbsp;LinkedIn</a></li>
+          <li><a class="link-secondary text-decoration-none" href="http://localhost/mediawiki/index.php"><svg
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wikipedia"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8.835 3.003c.828-.006 2.688 0 2.688 0l.033.03v.288q0 .12-.133.12c-.433.02-.522.063-.68.29-.087.126-.258.393-.435.694l-1.52 2.843-.043.089 1.858 3.801.113.031 2.926-6.946q.152-.42-.044-.595c-.132-.114-.224-.18-.563-.195l-.275-.014a.16.16 0 0 1-.096-.035.1.1 0 0 1-.046-.084v-.289l.042-.03h3.306l.034.03v.29q0 .117-.133.117-.65.03-.962.281a1.64 1.64 0 0 0-.488.704s-2.691 6.16-3.612 8.208c-.353.672-.7.61-1.004-.019A224 224 0 0 1 8.044 8.81c-.623 1.285-1.475 3.026-1.898 3.81-.411.715-.75.622-1.02.019-.45-1.065-1.131-2.519-1.817-3.982-.735-1.569-1.475-3.149-1.943-4.272-.167-.4-.293-.657-.412-.759q-.18-.15-.746-.18Q0 3.421 0 3.341v-.303l.034-.03c.615-.003 3.594 0 3.594 0l.034.03v.288q0 .119-.15.118l-.375.016q-.483.02-.483.288-.002.125.109.4c.72 1.753 3.207 6.998 3.207 6.998l.091.023 1.603-3.197-.32-.71L6.24 5.095s-.213-.433-.286-.577l-.098-.196c-.387-.77-.411-.82-.865-.88-.137-.017-.208-.035-.208-.102v-.304l.041-.03h2.853l.075.024v.303q0 .104-.15.104l-.206.03c-.523.04-.438.254-.09.946l1.057 2.163 1.17-2.332c.195-.427.155-.534.074-.633-.046-.055-.202-.144-.54-.158l-.133-.015a.16.16 0 0 1-.096-.034.1.1 0 0 1-.045-.085v-.288l.041-.03Z" />
+              </svg>&nbsp;MediaWiki</a></li>
+          <li><a class="link-secondary text-decoration-none" href="https://github.com/dashboard"><svg
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+              </svg>&nbsp;GitHub</a></li>
+          <li><a class="link-secondary text-decoration-none"
+              href="http://localhost/dolibarr/htdocs/index.php?mainmenu=home&leftmenu=home"><svg
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2M3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.39.39 0 0 0-.029-.518z" />
+                <path fill-rule="evenodd"
+                  d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.95 11.95 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0" />
+              </svg>&nbsp;Dolibarr ERP</a></li>
+          <li><a class="link-secondary text-decoration-none" href="https://roadmap.sh/"><svg
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-sign-railroad-fill" viewBox="0 0 16 16">
+                <path
+                  d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.224 3.162 8 6.94l3.777-3.777L9.049.435Zm3.274 7.425v-.862h.467c.28 0 .467.154.467.44 0 .28-.182.421-.475.421h-.459Z" />
+                <path
+                  d="M12.838 4.223 9.06 8l3.777 3.777 2.727-2.728c.58-.58.58-1.519 0-2.098zm.03 2.361c.591 0 .935.334.935.844a.79.79 0 0 1-.485.748l.536 1.074h-.59l-.467-.994h-.473v.994h-.521V6.584h1.064Zm-1.091 6.254L8 9.06l-3.777 3.777 2.728 2.727c.58.58 1.519.58 2.098 0zm-8.953-5.84v.861h.46c.292 0 .474-.14.474-.421 0-.286-.188-.44-.467-.44z" />
+                <path
+                  d="M3.162 11.777 6.94 8 3.162 4.223.435 6.951c-.58.58-.58 1.519 0 2.098zm-.86-5.193h1.065c.592 0 .936.334.936.844 0 .39-.242.654-.485.748l.536 1.074h-.59l-.467-.994h-.473v.994h-.521V6.584Z" />
+              </svg>&nbsp;RoadMap.sh</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Tecnologías</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary text-decoration-none"
+              href="https://learn.microsoft.com/es-es/training/">Microsoft</a></li>
+          <li><a class="link-secondary text-decoration-none" href="https://www.ibm.com/mx-es">IBM</a></li>
+          <li><a class="link-secondary text-decoration-none"
+              href="https://www.lenovo.com/mx/es/d/ofertas/?orgRef=https%253A%252F%252Fwww.google.com%252F&cid=mx:sem:pmax|se|google|pmax+todos+los+productos||||18137568889|||pmax|mixed|all&gad_source=1">Lenovo</a>
+          </li>
+          <li><a class="link-secondary text-decoration-none"
+              href="https://www.dell.com/premier/home/MX/es/RC1551808">Dell</a></li>
+          <li><a class="link-secondary text-decoration-none" href="https://www.nvidia.com/es-la/">Nvidia</a></li>
+        </ul>
+      </div>
     </div>
+  </footer>
 
-    <div class="col-md-4">
-      <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 bg-body-tertiary rounded">
-          <h4 class="fst-italic">Acerca de nuestro servicio:</h4>
-          <p class="mb-0">Asesorar a nuestros clientes sobre Tecnologías de la Información, con el objetivo de que tomen las mejores decisiones que les proporcionen valor agregado a sus procesos y vean su costo beneficio de forma tangible.</p>
-          <p class="mb-0">-------------------------------</p>
-          <dt> - Más de 25 años nos respaldan en el ramo de las TIC´s. - </dt>
-    </div>
-
-    <div>
-          <h4 class="fst-italic">Nuestros proyectos</h4>
-          <ul class="list-unstyled">
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <img src="Serv_METHOD_2.png" width="120" height="96" alt=""> 
-                <div class="col-lg-8">
-                  <h6 class="mb-0">METHOD - Implementamos y acoplamos la metodología que mejor se adapte a las necesidades de tu organización.</h6>
-                  <small class="text-body-secondary">January, 2023</small>
-                </div>
-              </a>
-            </li>            
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <img src="Serv_DEV_1.png" width="120" height="96" alt="">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">DEV - Desarrollamos software a la medida y damos mantenimiento a los sistemas existentes.</h6>
-                  <small class="text-body-secondary">November, 2020</small>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <img src="Serv_AUTOMA_1.png" width="120" height="96" alt="">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">BPA, RPA y DPA - Automatiza tus procesos, optimizando tiempos y esfuerzo para un mejor desempeño y servicio.</h6>
-                  <small class="text-body-secondary">October, 2023</small>
-                </div>
-              </a>
-            </li>              
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <img src="Serv_BMS_1.png" width="120" height="96" alt="">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">BMS - Building Management System, gestiona tus edificaciones, por medio de software y hardware para una mejor supervisión y control.</h6>
-                  <small class="text-body-secondary">April, 2021</small>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <img src="Serv_GPS_1.png" width="120" height="96" alt="">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">GPS Monitor - Monitorea tus unidades mediante GPS y sensores que te alertan dependiendo tus necesidades.</h6>
-                  <small class="text-body-secondary">October, 2023</small>
-                </div>
-              </a>
-            </li>            
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <img src="Serv_TELEM_1.png" width="120" height="96" alt="">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">TELEMETRÍA - Tecnología que permite la medición remota de magnitudes físicas y el posterior envío de la información hacia el operador del sistema.</h6>
-                  <small class="text-body-secondary">April, 2021</small>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <img src="Serv_INFRA_1.png" width="120" height="96" alt="">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">INFRA TI - Implementamos, auditamos y asesoramos sobre tu infraestructura de TI.</h6>
-                  <small class="text-body-secondary">October, 2023</small>
-                </div>
-              </a>
-            </li> 
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <img src="Serv_NOC_1.png" width="120" height="96" alt="">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">NOC - Network Operation Center. Centro de control centralizado para supervisar y gestionar sistemas informáticos, de telecomunicaciones o de redes de una organización.</h6>
-                  <small class="text-body-secondary">October, 2023</small>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <img src="Serv_CONSUL_1.png" width="120" height="96" alt="">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">CONSULTORÍA - Solicita de inicio la consultoría necesaria para cubrir tus necesidades de la mejor forma.</h6>
-                  <small class="text-body-secondary">April, 2021</small>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>   
-
-</main>
-
-<a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#"></a>
-
-<footer class="container py-7">
-  <div class="row">
-    <div class="col-12 col-md">
-      &nbsp;&nbsp;<img src="LogoFace1.jpg" alt="" width="80" height="30">
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg> -->
-      <small class="d-block mb-3 text-body-secondary">&copy; 2008–2024</small>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Dirección / contacto</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary text-decoration-none">Valle de moreno S/N, Priv. del Rey.</a></li>
-        <li><a class="link-secondary text-decoration-none">Hermosillo, Sonora 83118, MX.</a></li>
-        <li><a class="link-secondary text-decoration-none">Tels.: 662-342-5565</a></li>
-        <li><a class="link-secondary text-decoration-none">Tels.: 473-171-4458</a></li>
-        <li><a class="link-secondary text-decoration-none">recottservicios@gmail.com</a></li>        
-      </ul>
-    </div>
-
-    <div class="col-6 col-md">
-      <h5>Síguenos en:</h5>
-      <ul class="list-unstyled text-small">        
-        <li><a class="link-secondary text-decoration-none" href="https://www.facebook.com/recottintegrador"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-        </svg>&nbsp;Facebook</a></li>
-        <li><a class="link-secondary text-decoration-none" href="https://www.linkedin.com/company/recott-servicios/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
-        </svg>&nbsp;LinkedIn</a></li>
-        <li><a class="link-secondary text-decoration-none" href="http://localhost/mediawiki/index.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wikipedia" viewBox="0 0 16 16">
-          <path d="M8.835 3.003c.828-.006 2.688 0 2.688 0l.033.03v.288q0 .12-.133.12c-.433.02-.522.063-.68.29-.087.126-.258.393-.435.694l-1.52 2.843-.043.089 1.858 3.801.113.031 2.926-6.946q.152-.42-.044-.595c-.132-.114-.224-.18-.563-.195l-.275-.014a.16.16 0 0 1-.096-.035.1.1 0 0 1-.046-.084v-.289l.042-.03h3.306l.034.03v.29q0 .117-.133.117-.65.03-.962.281a1.64 1.64 0 0 0-.488.704s-2.691 6.16-3.612 8.208c-.353.672-.7.61-1.004-.019A224 224 0 0 1 8.044 8.81c-.623 1.285-1.475 3.026-1.898 3.81-.411.715-.75.622-1.02.019-.45-1.065-1.131-2.519-1.817-3.982-.735-1.569-1.475-3.149-1.943-4.272-.167-.4-.293-.657-.412-.759q-.18-.15-.746-.18Q0 3.421 0 3.341v-.303l.034-.03c.615-.003 3.594 0 3.594 0l.034.03v.288q0 .119-.15.118l-.375.016q-.483.02-.483.288-.002.125.109.4c.72 1.753 3.207 6.998 3.207 6.998l.091.023 1.603-3.197-.32-.71L6.24 5.095s-.213-.433-.286-.577l-.098-.196c-.387-.77-.411-.82-.865-.88-.137-.017-.208-.035-.208-.102v-.304l.041-.03h2.853l.075.024v.303q0 .104-.15.104l-.206.03c-.523.04-.438.254-.09.946l1.057 2.163 1.17-2.332c.195-.427.155-.534.074-.633-.046-.055-.202-.144-.54-.158l-.133-.015a.16.16 0 0 1-.096-.034.1.1 0 0 1-.045-.085v-.288l.041-.03Z"/>
-        </svg>&nbsp;MediaWiki</a></li>
-        <li><a class="link-secondary text-decoration-none" href="https://github.com/dashboard"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-        </svg>&nbsp;GitHub</a></li>
-        <li><a class="link-secondary text-decoration-none" href="http://localhost/dolibarr/htdocs/index.php?mainmenu=home&leftmenu=home"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer" viewBox="0 0 16 16">
-          <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2M3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.39.39 0 0 0-.029-.518z"/>
-          <path fill-rule="evenodd" d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.95 11.95 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0"/>
-        </svg>&nbsp;Dolibarr ERP</a></li>
-        <li><a class="link-secondary text-decoration-none" href="https://roadmap.sh/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sign-railroad-fill" viewBox="0 0 16 16">
-          <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.224 3.162 8 6.94l3.777-3.777L9.049.435Zm3.274 7.425v-.862h.467c.28 0 .467.154.467.44 0 .28-.182.421-.475.421h-.459Z"/>
-          <path d="M12.838 4.223 9.06 8l3.777 3.777 2.727-2.728c.58-.58.58-1.519 0-2.098zm.03 2.361c.591 0 .935.334.935.844a.79.79 0 0 1-.485.748l.536 1.074h-.59l-.467-.994h-.473v.994h-.521V6.584h1.064Zm-1.091 6.254L8 9.06l-3.777 3.777 2.728 2.727c.58.58 1.519.58 2.098 0zm-8.953-5.84v.861h.46c.292 0 .474-.14.474-.421 0-.286-.188-.44-.467-.44z"/>
-          <path d="M3.162 11.777 6.94 8 3.162 4.223.435 6.951c-.58.58-.58 1.519 0 2.098zm-.86-5.193h1.065c.592 0 .936.334.936.844 0 .39-.242.654-.485.748l.536 1.074h-.59l-.467-.994h-.473v.994h-.521V6.584Z"/>
-        </svg>&nbsp;RoadMap.sh</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Tecnologías</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary text-decoration-none" href="https://learn.microsoft.com/es-es/training/">Microsoft</a></li>
-        <li><a class="link-secondary text-decoration-none" href="https://www.ibm.com/mx-es">IBM</a></li>
-        <li><a class="link-secondary text-decoration-none" href="https://www.lenovo.com/mx/es/d/ofertas/?orgRef=https%253A%252F%252Fwww.google.com%252F&cid=mx:sem:pmax|se|google|pmax+todos+los+productos||||18137568889|||pmax|mixed|all&gad_source=1">Lenovo</a></li>
-        <li><a class="link-secondary text-decoration-none" href="https://www.dell.com/premier/home/MX/es/RC1551808">Dell</a></li>
-        <li><a class="link-secondary text-decoration-none" href="https://www.nvidia.com/es-la/">Nvidia</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
-
-<script>
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Cargar tema desde localStorage o usar 'light' por defecto
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-bs-theme', currentTheme);
+      // Cargar tema desde localStorage o usar 'light' por defecto
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-bs-theme', currentTheme);
 
-        // Función para cambiar de tema
-        function setTheme(theme) {
-            document.documentElement.setAttribute('data-bs-theme', theme);  // Cambiar el atributo 'data-bs-theme'
-            localStorage.setItem('theme', theme);  // Guardar el tema en localStorage
+      // Función para cambiar de tema
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-bs-theme', theme);  // Cambiar el atributo 'data-bs-theme'
+        localStorage.setItem('theme', theme);  // Guardar el tema en localStorage
 
-            // Actualizar el estado de los botones (activos/inactivos)
-            const buttons = document.querySelectorAll('.dropdown-item');
-            buttons.forEach(button => {
-                if (button.getAttribute('data-bs-theme-value') === theme) {
-                    button.setAttribute('aria-pressed', 'true');
-                    button.classList.add('active');
-                    button.querySelector('svg').classList.remove('d-none');
-                } else {
-                    button.setAttribute('aria-pressed', 'false');
-                    button.classList.remove('active');
-                    button.querySelector('svg').classList.add('d-none');
-                }
-            });
-        }
-
-        // Asignar eventos a los botones del menú desplegable
-        document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const theme = item.getAttribute('data-bs-theme-value');
-                setTheme(theme);  // Cambiar el tema cuando se haga clic en un botón
-            });
+        // Actualizar el estado de los botones (activos/inactivos)
+        const buttons = document.querySelectorAll('.dropdown-item');
+        buttons.forEach(button => {
+          if (button.getAttribute('data-bs-theme-value') === theme) {
+            button.setAttribute('aria-pressed', 'true');
+            button.classList.add('active');
+            button.querySelector('svg').classList.remove('d-none');
+          } else {
+            button.setAttribute('aria-pressed', 'false');
+            button.classList.remove('active');
+            button.querySelector('svg').classList.add('d-none');
+          }
         });
+      }
 
-        // Añadir el controlador del menú desplegable
-        const dropdownButton = document.getElementById('bd-theme');
-        const dropdownMenu = dropdownButton.nextElementSibling;
-        dropdownButton.addEventListener('click', () => {
-            dropdownMenu.classList.toggle('show');
+      // Asignar eventos a los botones del menú desplegable
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const theme = item.getAttribute('data-bs-theme-value');
+          setTheme(theme);  // Cambiar el tema cuando se haga clic en un botón
         });
+      });
+
+      // Añadir el controlador del menú desplegable
+      const dropdownButton = document.getElementById('bd-theme');
+      const dropdownMenu = dropdownButton.nextElementSibling;
+      dropdownButton.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('show');
+      });
     });
-</script>
+  </script>
 
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    </body>
+
+</body>
+
 </html>
