@@ -23,8 +23,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
-
 </head>
+
 
 <body>
 
@@ -97,50 +97,7 @@
     </div>
   </div>
 
-  <!-- <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart" aria-labelledby="My Cart">
-    <div class="offcanvas-header justify-content-center">
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="order-md-last">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Your cart</span>
-          <span class="badge bg-primary rounded-pill">3</span>
-        </h4>
-        <ul class="list-group mb-3">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Growers cider</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Fresh grapes</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$8</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Heinz tomato ketchup</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$5</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>$20</strong>
-          </li>
-        </ul>
-
-        <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
-      </div>
-    </div>
-  </div> -->
-
-  <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasSearch"
+  <!-- <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasSearch"
     aria-labelledby="Search">
     <div class="offcanvas-header justify-content-center">
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -157,22 +114,26 @@
         </form>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <header>
+
+    <!-- SECCIÓN LOGO -->
     <div class="container-fluid">
       <div class="row py-3 border-bottom">
-
         <div class="col-sm-4 col-lg-3 text-center text-sm-start">
-          <div class="main-logo">
-            <a href="index.html">
-              <img src="images/LogoFace1.jpg" alt="logo" class="img-fluid" height="350" width="150">
-              <!-- <span class="style="display: inline-block; fs-9 text-decoration: none; padding-left: 1rem; display: inline-block;"><br>Comercializadora</span> -->
-              <span style="display: inline-block; font-size: 0.9rem; text-decoration: none; padding-left: 1rem;">Comercializadora</span>
-              <!-- <span style="display: inline-block; margin-left: 1rem; text-decoration: none;">Comercializadora</span>     -->
-              <!-- <span style="text-decoration: none; padding-left: 1rem; display: inline-block; vertical-align: middle;"><br>Comercializadora</span> -->
-              <!-- <span style="display: inline-block; padding-left: 1rem; text-decoration: none;"><br>Comercializadora</span> -->
+          <div class="main-logo d-flex align-items-center" style="margin-top: 10px;">
+            <a href="index.html" class="d-inline-block">
+              <img src="images/LogoFace1.jpg" alt="logo" class="img-fluid" height="340" width="140">
             </a>
+            <span style="
+                  display: inline-block;
+                  font-size: 0.9rem;
+                  margin-left: 1rem;
+                  text-decoration: none;
+                  line-height: 0;
+                  color: inherit;
+                "><br>Comercializadora</span>
           </div>
         </div>
 
@@ -205,8 +166,9 @@
         <div
           class="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
           <div class="support-box text-end d-none d-xl-block">
-            <span class="fs-6 text-muted">Soporte?.</span>
-            <h5 class="mb-0">+52 662-342-5565</h5>
+            <span class="fs-6 text-muted">Soporte?.</span><br>
+            <span style="font-size: 15px; margin-bottom: 0;">+52 662-342-5565 /</span>
+            <span style="font-size: 15px; margin-bottom: 0;">+52 473-690-8141</span>
           </div>
 
           <ul class="d-flex justify-content-end list-unstyled m-0">
@@ -214,13 +176,6 @@
               <a href="#" class="rounded-circle bg-light p-2 mx-1">
                 <svg width="24" height="24" viewBox="0 0 24 24">
                   <use xlink:href="#user"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="rounded-circle bg-light p-2 mx-1">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                  <use xlink:href="#heart"></use>
                 </svg>
               </a>
             </li>
@@ -260,32 +215,6 @@
                 <div class="offcanvas-header justify-content-center">
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-
-                <!-- <div class="offcanvas-body">
-
-                  <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
-                    <li class="nav-item active">
-                      <a href="#women" class="nav-link">Zapatería</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a href="#men" class="nav-link">Ferretería</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#kids" class="nav-link">Herramienta</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#accessories" class="nav-link">Accesorios</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#brand" class="nav-link">Cómputo</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#sale" class="nav-link">Gadgets</a>
-                    </li>
-                  </ul>
-
-                </div> -->
-
               </div>
           </div>
         </div>
@@ -296,11 +225,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-
           <div class="section-header d-flex flex-wrap flex-wrap justify-content-between mb-5">
-
             <h2 class="section-title">Categorías de productos</h2>
-
             <div class="d-flex align-items-center">
               <a href="#" class="btn-link text-decoration-none">Todas las categorías →</a>
               <div class="swiper-buttons">
@@ -309,21 +235,18 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-
           <div class="brand-carousel swiper">
             <div class="swiper-wrapper">
-
               <div class="swiper-slide">
                 <div class="card mb-3 p-3 rounded-4 shadow border-0">
                   <div class="row g-0">
                     <div class="col-md-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-buildings-fill"
-                        viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
+                        class="bi bi-buildings-fill" viewBox="0 0 16 16">
                         <path
                           d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zM2 11h1v1H2zm2 0h1v1H4zm-1 2v1H2v-1zm1 0h1v1H4zm9-10v1h-1V3zM8 5h1v1H8zm1 2v1H8V7zM8 9h1v1H8zm2 0h1v1h-1zm-1 2v1H8v-1zm1 0h1v1h-1zm3-2v1h-1V9zm-1 2h1v1h-1zm-2-4h1v1h-1zm3 0v1h-1V7zm-2-2v1h-1V5zm1 0h1v1h-1z" />
                       </svg>
@@ -331,7 +254,7 @@
                     <div class="col-md-8">
                       <div class="card-body py-0">
                         <p class="text-muted mb-0">Zapatería</p>
-                        <h5 class="card-title">Zapato y bota para trabajo industrial</h5>
+                        <h5 class="card-title">Zapato y bota industrial</h5>
                       </div>
                     </div>
                   </div>
@@ -341,8 +264,8 @@
                 <div class="card mb-3 p-3 rounded-4 shadow border-0">
                   <div class="row g-0">
                     <div class="col-md-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-ladder"
-                        viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
+                        class="bi bi-ladder" viewBox="0 0 16 16">
                         <path
                           d="M4.5 1a.5.5 0 0 1 .5.5V2h6v-.5a.5.5 0 0 1 1 0v14a.5.5 0 0 1-1 0V15H5v.5a.5.5 0 0 1-1 0v-14a.5.5 0 0 1 .5-.5M5 14h6v-2H5zm0-3h6V9H5zm0-3h6V6H5zm0-3h6V3H5z" />
                       </svg>
@@ -350,7 +273,7 @@
                     <div class="col-md-8">
                       <div class="card-body py-0">
                         <p class="text-muted mb-0">Ferretería</p>
-                        <h5 class="card-title">Productos para mantenimiento en general</h5>
+                        <h5 class="card-title">Productos de reparación</h5>
                       </div>
                     </div>
                   </div>
@@ -360,8 +283,8 @@
                 <div class="card mb-3 p-3 rounded-4 shadow border-0">
                   <div class="row g-0">
                     <div class="col-md-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" top="align-items-center" width="80" height="80" fill="currentColor" class="bi bi-wrench-adjustable"
-                        viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" top="align-items-center" width="80" height="80"
+                        fill="currentColor" class="bi bi-wrench-adjustable" viewBox="0 0 16 16">
                         <path d="M16 4.5a4.5 4.5 0 0 1-1.703 3.526L13 5l2.959-1.11q.04.3.041.61" />
                         <path
                           d="M11.5 9c.653 0 1.273-.139 1.833-.39L12 5.5 11 3l3.826-1.53A4.5 4.5 0 0 0 7.29 6.092l-6.116 5.096a2.583 2.583 0 1 0 3.638 3.638L9.908 8.71A4.5 4.5 0 0 0 11.5 9m-1.292-4.361-.596.893.809-.27a.25.25 0 0 1 .287.377l-.596.893.809-.27.158.475-1.5.5a.25.25 0 0 1-.287-.376l.596-.893-.809.27a.25.25 0 0 1-.287-.377l.596-.893-.809.27-.158-.475 1.5-.5a.25.25 0 0 1 .287.376M3 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
@@ -370,7 +293,7 @@
                     <div class="col-md-8">
                       <div class="card-body py-0">
                         <p class="text-muted mb-0">Herramienta</p>
-                        <h5 class="card-title">Piezas innovadoras y especializadas</h5>
+                        <h5 class="card-title">Innovación y especialización</h5>
                       </div>
                     </div>
                   </div>
@@ -380,8 +303,8 @@
                 <div class="card mb-3 p-3 rounded-4 shadow border-0">
                   <div class="row g-0">
                     <div class="col-md-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-suitcase2-fill"
-                        viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
+                        class="bi bi-suitcase2-fill" viewBox="0 0 16 16">
                         <path
                           d="M6.5 0a.5.5 0 0 0-.5.5V3H4.5A1.5 1.5 0 0 0 3 4.5v9a1.5 1.5 0 0 0 1.003 1.416A1 1 0 1 0 6 15h4a1 1 0 1 0 1.996-.084A1.5 1.5 0 0 0 13 13.5v-9A1.5 1.5 0 0 0 11.5 3H10V.5a.5.5 0 0 0-.5-.5zM9 3H7V1h2zM4 7V6h8v1z" />
                       </svg>
@@ -389,7 +312,7 @@
                     <div class="col-md-8">
                       <div class="card-body py-0">
                         <p class="text-muted mb-0">Accesorios</p>
-                        <h5 class="card-title">Productos que mejoran nuestra vida</h5>
+                        <h5 class="card-title">Productos de optimización</h5>
                       </div>
                     </div>
                   </div>
@@ -399,8 +322,8 @@
                 <div class="card mb-3 p-3 rounded-4 shadow border-0">
                   <div class="row g-0">
                     <div class="col-md-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-pc-display-horizontal"
-                        viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
+                        class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
                         <path
                           d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5M12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0m2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0M1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25" />
                       </svg>
@@ -408,7 +331,7 @@
                     <div class="col-md-8">
                       <div class="card-body py-0">
                         <p class="text-muted mb-0">Cómputo</p>
-                        <h5 class="card-title">Equipos y accesorios especializados</h5>
+                        <h5 class="card-title">Equipamiento y accesorios</h5>
                       </div>
                     </div>
                   </div>
@@ -418,8 +341,8 @@
                 <div class="card mb-3 p-3 rounded-4 shadow border-0">
                   <div class="row g-0">
                     <div class="col-md-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-cassette-fill"
-                        viewBox="0 0 16 16">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
+                        class="bi bi-cassette-fill" viewBox="0 0 16 16">
                         <path
                           d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h.191l1.862-3.724A.5.5 0 0 1 4 10h8a.5.5 0 0 1 .447.276L14.31 14h.191a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2zM4 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2m8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2M6 6a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H7a1 1 0 0 1-1-1" />
                         <path d="m13.191 14-1.5-3H4.309l-1.5 3z" />
@@ -428,16 +351,14 @@
                     <div class="col-md-8">
                       <div class="card-body py-0">
                         <p class="text-muted mb-0">Gadgets</p>
-                        <h5 class="card-title">Dispositivos tecnológicos de tamaño pequeño</h5>
+                        <h5 class="card-title">Dispositivos de tecnología</h5>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -445,21 +366,23 @@
 
   <section class="py-5">
     <div class="container-fluid">
-
       <div class="row">
         <div class="col-md-12">
-
           <div class="bootstrap-tabs product-tabs">
             <div class="tabs-header d-flex justify-content-between border-bottom my-5">
-              <h3>Trending Products</h3>
+              <h3>Catálogo de productos</h3>
               <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                   <a href="#" class="nav-link text-uppercase fs-6 active" id="nav-all-tab" data-bs-toggle="tab"
-                    data-bs-target="#nav-all">All</a>
-                  <a href="#" class="nav-link text-uppercase fs-6" id="nav-fruits-tab" data-bs-toggle="tab"
-                    data-bs-target="#nav-fruits">Fruits & Veges</a>
-                  <a href="#" class="nav-link text-uppercase fs-6" id="nav-juices-tab" data-bs-toggle="tab"
-                    data-bs-target="#nav-juices">Juices</a>
+                    data-bs-target="#nav-all">Zapatería</a>
+                  <a href="#" class="nav-link text-uppercase fs-6" id="nav-ferreteria-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-ferreteria">Ferretería</a>
+                  <a href="#" class="nav-link text-uppercase fs-6" id="nav-ropa_accesorios-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-ropa_accesorios">Ropa / accesorios</a>
+                  <a href="#" class="nav-link text-uppercase fs-6" id="nav-computo-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-computo">Cómputo</a>
+                  <a href="#" class="nav-link text-uppercase fs-6" id="nav-gadgets-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-gadgets">Gadgets</a>
                 </div>
               </nav>
             </div>
@@ -467,673 +390,266 @@
               <div class="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
 
                 <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-
+                  <!-- / Zapatería -->
                   <div class="col">
                     <div class="product-item">
-                      <span class="badge bg-success position-absolute m-3">-30%</span>
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/slide-shoe.png" class="tab-image">
+                          <img src="images/slide-shoe1_resultado.png" class="tab-image">
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                      <h3>Calzado de Seguridad Borceguí 192 PRO Negro $1,139.00</h3>
+                      <span class="qty">En Stock</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Puntera de policarbonato, corte de microfibra impermeable y forro antibacterial. Suela
+                        dieléctrica resistente
+                        a descargas de hasta 18,000 V. Diseño ergonómico, plantilla antifatiga y lengüeta con fuelle
+                        para evitar la
+                        entrada de líquidos y polvo. Certificado NOM 113 STPS 2009.
+                      </h3>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="product-item">
-                      <span class="badge bg-success position-absolute m-3">-30%</span>
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-biscuits.png" class="tab-image">
+                          <img src="images/slide-shoe2_resultado.png" class="tab-image">
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                      <h3>Bota Táctica 10″ 156 W28 Negro - $1,949.00</h3>
+                      <span class="qty">En STOCK</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Para aventuras extremas como para entornos laborales desafiantes, permitiéndote cruzar con
+                        facilidad por controles
+                        de aeropuertos. Suela ligera con diseño antifangos y costura 360º, plantilla de doble densidad
+                        en poliuretano y
+                        memory foam. Certificado NOM 113 STPS 2009.
+                      </h3>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-cucumber.png" class="tab-image">
+                          <img src="images/slide-shoe3_resultado.png" class="tab-image">
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                      <h3>Bota Táctica 6″ 154 W28 Coyote $1,799.00</h3>
+                      <span class="qty">En STOCK</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Para aventuras extremas como para entornos laborales desafiantes, permitiéndote cruzar con
+                        facilidad por controles
+                        de aeropuertos. Suela ligera con diseño antifangos y costura 360º, plantilla de doble densidad
+                        en poliuretano y
+                        memory foam.Certificado NOM 113 STPS 2009.
+                      </h3>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-milk.png" class="tab-image">
+                          <img src="images/slide-shoe4_resultado.png" class="tab-image">
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                      <h3>Calzado de Seguridad Choclo 190 Gris</h3>
+                      <span class="qty">En STOCK</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Puntera de policarbonato, corte de gamuza de cuero vacuno y forro antibacterial.
+                        Suela dieléctrica resistente a descargas de hasta 18,000 V. Costura reforzada, bullón y lengüeta
+                        con fuelle
+                        para evitar entrada de líquidos y polvo. Plantilla PU ergonómica. Libre de metales y
+                        certificado NOM 113 STPS 2009.
+                      </h3>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-bananas.png" class="tab-image">
+                          <img src="images/slide-shoe5_resultado.png" class="tab-image">
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                      <h3>Bota Seguridad Patrimonial 205 Negro $1,779.00</h3>
+                      <span class="qty">En Stock</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Protección en entornos tácticos. Protección de acero y suela antideslizante. Resistente al agua
+                        y forro
+                        antibacterial. Para sectores de vigilancia, seguridad privada y de valores, donde la firmeza
+                        es primordial. Certificado NOM 113 STPS 2009.
+                      </h3>
                     </div>
                   </div>
-
-                  <div class="col">
-                    <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
-                      <figure>
-                        <a href="index.html" title="Product Title">
-                          <img src="images/thumb-biscuits.png" class="tab-image">
-                        </a>
-                      </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
-                          class="text-primary">
-                          <use xlink:href="#star-solid"></use>
-                        </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
-                      <figure>
-                        <a href="index.html" title="Product Title">
-                          <img src="images/thumb-cucumber.png" class="tab-image">
-                        </a>
-                      </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
-                          class="text-primary">
-                          <use xlink:href="#star-solid"></use>
-                        </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
-                      <figure>
-                        <a href="index.html" title="Product Title">
-                          <img src="images/thumb-milk.png" class="tab-image">
-                        </a>
-                      </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
-                          class="text-primary">
-                          <use xlink:href="#star-solid"></use>
-                        </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
-                      <figure>
-                        <a href="index.html" title="Product Title">
-                          <img src="images/thumb-bananas.png" class="tab-image">
-                        </a>
-                      </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
-                          class="text-primary">
-                          <use xlink:href="#star-solid"></use>
-                        </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
-                      <figure>
-                        <a href="index.html" title="Product Title">
-                          <img src="images/thumb-biscuits.png" class="tab-image">
-                        </a>
-                      </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
-                          class="text-primary">
-                          <use xlink:href="#star-solid"></use>
-                        </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
                 <!-- / product-grid -->
               </div>
 
-              <div class="tab-pane fade" id="nav-fruits" role="tabpanel" aria-labelledby="nav-fruits-tab">
+              <div class="tab-pane fade" id="nav-ferreteria" role="tabpanel" aria-labelledby="nav-fruits-tab">
 
                 <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-
+                  <!-- / Ferretaría -->
                   <div class="col">
                     <div class="product-item">
-                      <span class="badge bg-success position-absolute m-3">-30%</span>
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-cucumber.png" class="tab-image">
+                          <!-- <img src="images/slide-tool1_resultado.png" class="tab-image"> -->
+                          <!-- <video class="tab-image" width="235" height="235" controls
+                            poster="images/slide-tool1_resultado.png" oncontextmenu="return false;"
+                            style="display: inline-block; float: right; margin-left: 10px; margin-bottom: 10px;">
+                            <source src="images/5b5e35a60467a8a3c8ea47a486a430bb212f3cc8.f30.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                          </video> -->
+                          <video class="tab-image" width="235" height="235" controls
+                            poster="images/slide-tool1_resultado.png" oncontextmenu="return false;"
+                            style="float: right; margin-left: 10px; margin-bottom: 10px;">
+                            <source src="images/5b5e35a60467a8a3c8ea47a486a430bb212f3cc8.f30.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                          </video>
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                      <h3>Llave hexagonal multifuncional - 1 pieza MX$25.54</h3>
+                      <span class="qty">En STOCK</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
-                        </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                        </svg> 4.8</span>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Llave hexagonal multifuncional 10 en 1 de 10 pulgadas, diseño portátil de hueso de perro,
+                        material de aleación de
+                        aluminio, adecuada para motocicletas y bicicletas.
+                      </h3>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="product-item">
-                      <span class="badge bg-success position-absolute m-3">-30%</span>
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-milk.png" class="tab-image">
+                          <!-- <img src="images/slide-tool4_resultado.png" class="tab-image"> -->
+                          <video class="tab-image" width="235" height="235" controls
+                            poster="images/slide-tool4_resultado.png" oncontextmenu="return false;"
+                            style="float: right; margin-left: 10px; margin-bottom: 10px;">
+                            <source src="images/af51f4528631a68af02a5bfe8361947f2f9a09fa.f30.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                          </video>
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                      <h3>Alfombrillas Autoadhesivas - 36 piezas MX$23.79</h3>
+                      <span class="qty">En STOCK</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
-                        </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                        </svg> 4.8</span>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Protectores de Suelo Antirrayones Cortables para Pisos de Madera, Almohadillas Antideslizantes
+                        Duraderas para
+                        Sillas, Mesas y Electrodomésticos - Prevención de Daños y Protección del Piso.
+                      </h3>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="product-item">
-                      <span class="badge bg-success position-absolute m-3">-30%</span>
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-orange-juice.png" class="tab-image">
+                          <!-- <img src="images/slide-tool3_resultado.png" class="tab-image"> -->
+                          <video class="tab-image" width="235" height="235" controls
+                            poster="images/slide-tool3_resultado.png" oncontextmenu="return false;"
+                            style="float: right; margin-left: 10px; margin-bottom: 10px;">
+                            <source src="images/20e5540ab4a7ec8657c163b4a854944becdbd059.f30.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                          </video>
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                      <h3>Cinchos para cables - 100-Unidades MX$29.88</h3>
+                      <span class="qty">En STOCK</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cinchos para cables multiusos resistentes con cierre automático y correas de nailon duraderas
+                        para almacenamiento
+                        arquitectónico y de escritorio doméstico.
+                      </h3>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-raspberries.png" class="tab-image">
+                          <!-- <img src="images/slide-tool2_resultado.png" class="tab-image"> -->
+                          <video class="tab-image" width="235" height="235" controls
+                            poster="images/slide-tool2_resultado.png" oncontextmenu="return false;"
+                            style="float: right; margin-left: 10px; margin-bottom: 10px;">
+                            <source src="images/2e7d2d11f043001e542ed725b3c7f4fdd38caf14.f30.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                          </video>
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                      <h3>Ganchos Adhesivos - 10-Unidades MX$38.32</h3>
+                      <span class="qty">En STOCK</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Para Montaje en Pared de Plástico con Estilo Moderno, Adecuado para Enrutadores, Tomacorrientes,
+                        Marcos de Fotos,
+                        Controles Remotos - Gancho Multifuncional Impermeable, Apto para Cocina, Dormitorio, Baño y
+                        Oficina.
+                      </h3>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-bananas.png" class="tab-image">
+                          <!-- <img src="images/slide-tool7_resultado.png" class="tab-image"> -->
+                          <video class="tab-image" width="235" height="235" controls
+                            poster="images/slide-tool7_resultado.png" oncontextmenu="return false;"
+                            style="float: right; margin-left: 10px; margin-bottom: 10px;">
+                            <source src="images/34fecf7d79cb18e379ed9287cb739fdad66ab627.f30.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                          </video>
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                      <h3>Organizador de cables - 20 piezas MX$32.59</h3>
+                      <span class="qty">En STOCK</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
-                      <figure>
-                        <a href="index.html" title="Product Title">
-                          <img src="images/thumb-bananas.png" class="tab-image">
-                        </a>
-                      </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
-                          class="text-primary">
-                          <use xlink:href="#star-solid"></use>
-                        </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Organizador de cables blanco y negro, artefacto de almacenamiento de cables de datos,
+                        computadora de escritorio, bridas para cables, fijador de enrutamiento de cables de red.
+                      </h3>
                     </div>
                   </div>
 
@@ -1141,263 +657,318 @@
                 <!-- / product-grid -->
 
               </div>
-              <div class="tab-pane fade" id="nav-juices" role="tabpanel" aria-labelledby="nav-juices-tab">
+              <div class="tab-pane fade" id="nav-ropa_accesorios" role="tabpanel" aria-labelledby="nav-juices-tab">
 
                 <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-
+                  <!-- / Ropa y accesorios -->
                   <div class="col">
                     <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-cucumber.png" class="tab-image">
+                          <img src="images/slide-soporte1_resultado.png" class="tab-image">
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
+                      <h3>Bota industrial en negro</h3>
                       <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-milk.png" class="tab-image">
+                          <img src="images/slide-accesorie1_resultado.png" class="tab-image">
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
+                      <h3>Bota industrial en negro</h3>
                       <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-tomatoes.png" class="tab-image">
+                          <img src="images/slide-soporte2_resultado.png" class="tab-image">
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
+                      <h3>Bota industrial en negro</h3>
                       <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-tomatoketchup.png" class="tab-image">
+                          <img src="images/slide-tool6_resultado.png" class="tab-image">
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
+                      <h3>Bota industrial en negro</h3>
                       <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                       <figure>
                         <a href="index.html" title="Product Title">
-                          <img src="images/thumb-bananas.png" class="tab-image">
+                          <img src="images/slide-tool4_resultado.png" class="tab-image">
                         </a>
                       </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
+                      <h3>Bota industrial en negro</h3>
                       <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
                           class="text-primary">
                           <use xlink:href="#star-solid"></use>
                         </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
                     </div>
                   </div>
 
-                  <div class="col">
-                    <div class="product-item">
-                      <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                          <use xlink:href="#heart"></use>
-                        </svg></a>
-                      <figure>
-                        <a href="index.html" title="Product Title">
-                          <img src="images/thumb-bananas.png" class="tab-image">
-                        </a>
-                      </figure>
-                      <h3>Sunstar Fresh Melon Juice</h3>
-                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
-                          class="text-primary">
-                          <use xlink:href="#star-solid"></use>
-                        </svg> 4.5</span>
-                      <span class="price">$18.00</span>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <div class="input-group product-qty">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                              data-type="minus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#minus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                          <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                          <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                              data-type="plus">
-                              <svg width="16" height="16">
-                                <use xlink:href="#plus"></use>
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
-                        <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <!-- / product-grid -->
+
+              </div>
+
+              <div class="tab-pane fade" id="nav-computo" role="tabpanel" aria-labelledby="nav-juices-tab">
+
+                <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                  <!-- / Cómputo -->
+                  <div class="col">
+                    <div class="product-item">
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="images/slide-soporte1_resultado.png" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Bota industrial en negro</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="product-item">
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="images/slide-tool6_resultado.png" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Bota industrial en negro</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="product-item">
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="images/slide-tool6_resultado.png" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Bota industrial en negro</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="product-item">
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="images/slide-tool6_resultado.png" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Bota industrial en negro</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="product-item">
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="images/slide-tool6_resultado.png" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Bota industrial en negro</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- / product-grid -->
+
+              </div>
+              <div class="tab-pane fade" id="nav-gadgets" role="tabpanel" aria-labelledby="nav-juices-tab">
+
+                <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                  <!-- /gadgets -->
+                  <div class="col">
+                    <div class="product-item">
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Bota industrial en negro</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="product-item">
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Bota industrial en negro</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="product-item">
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Bota industrial en negro</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="product-item">
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Bota industrial en negro</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="product-item">
+                      <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                      <figure>
+                        <a href="index.html" title="Product Title">
+                          <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                        </a>
+                      </figure>
+                      <h3>Bota industrial en negro</h3>
+                      <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24"
+                          class="text-primary">
+                          <use xlink:href="#star-solid"></use>
+                        </svg> 4.5</span>
+                      <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                        Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                      </h3>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </section>
 
   <section class="py-5 overflow-hidden">
@@ -1407,10 +978,10 @@
 
           <div class="section-header d-flex justify-content-between">
 
-            <h2 class="section-title">Most popular products</h2>
+            <h2 class="section-title">Productos más populares</h2>
 
             <div class="d-flex align-items-center">
-              <a href="#" class="btn-link text-decoration-none">View All Categories →</a>
+              <a href="#" class="btn-link text-decoration-none">Ver todas las categorías →</a>
               <div class="swiper-buttons">
                 <button class="swiper-prev products-carousel-prev btn btn-primary">❮</button>
                 <button class="swiper-next products-carousel-next btn btn-primary">❯</button>
@@ -1426,39 +997,147 @@
           <div class="products-carousel swiper">
             <div class="swiper-wrapper">
 
-              <div class="product-item swiper-slide">
-                <a href="#" class="btn-wishlist"><svg width="24" height="24">
-                    <use xlink:href="#heart"></use>
-                  </svg></a>
-                <figure>
-                  <a href="index.html" title="Product Title">
-                    <img src="images/thumb-tomatoes.png" class="tab-image">
-                  </a>
-                </figure>
-                <h3>Sunstar Fresh Melon Juice</h3>
-                <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary">
-                    <use xlink:href="#star-solid"></use>
-                  </svg> 4.5</span>
-                <span class="price">$18.00</span>
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="input-group product-qty">
-                    <span class="input-group-btn">
-                      <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                        <svg width="16" height="16">
-                          <use xlink:href="#minus"></use>
-                        </svg>
-                      </button>
-                    </span>
-                    <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                    <span class="input-group-btn">
-                      <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                        <svg width="16" height="16">
-                          <use xlink:href="#plus"></use>
-                        </svg>
-                      </button>
-                    </span>
-                  </div>
-                  <a href="#" class="nav-link">Add to Cart <iconify-icon icon="uil:shopping-cart"></a>
+              <div class="col">
+                <div class="product-item">
+                  <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                  <figure>
+                    <a href="index.html" title="Product Title">
+                      <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                    </a>
+                  </figure>
+                  <h3>Bota industrial en negro</h3>
+                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary">
+                      <use xlink:href="#star-solid"></use>
+                    </svg> 4.5</span>
+                  <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                    Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                  </h3>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="product-item">
+                  <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                  <figure>
+                    <a href="index.html" title="Product Title">
+                      <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                    </a>
+                  </figure>
+                  <h3>Bota industrial en negro</h3>
+                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary">
+                      <use xlink:href="#star-solid"></use>
+                    </svg> 4.5</span>
+                  <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                    Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                  </h3>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="product-item">
+                  <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                  <figure>
+                    <a href="index.html" title="Product Title">
+                      <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                    </a>
+                  </figure>
+                  <h3>Bota industrial en negro</h3>
+                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary">
+                      <use xlink:href="#star-solid"></use>
+                    </svg> 4.5</span>
+                  <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                    Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                  </h3>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="product-item">
+                  <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                  <figure>
+                    <a href="index.html" title="Product Title">
+                      <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                    </a>
+                  </figure>
+                  <h3>Bota industrial en negro</h3>
+                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary">
+                      <use xlink:href="#star-solid"></use>
+                    </svg> 4.5</span>
+                  <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                    Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                  </h3>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="product-item">
+                  <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                  <figure>
+                    <a href="index.html" title="Product Title">
+                      <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                    </a>
+                  </figure>
+                  <h3>Bota industrial en negro</h3>
+                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary">
+                      <use xlink:href="#star-solid"></use>
+                    </svg> 4.5</span>
+                  <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                    Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                  </h3>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="product-item">
+                  <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                  <figure>
+                    <a href="index.html" title="Product Title">
+                      <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                    </a>
+                  </figure>
+                  <h3>Bota industrial en negro</h3>
+                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary">
+                      <use xlink:href="#star-solid"></use>
+                    </svg> 4.5</span>
+                  <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                    Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                  </h3>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="product-item">
+                  <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                  <figure>
+                    <a href="index.html" title="Product Title">
+                      <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                    </a>
+                  </figure>
+                  <h3>Bota industrial en negro</h3>
+                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary">
+                      <use xlink:href="#star-solid"></use>
+                    </svg> 4.5</span>
+                  <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                    Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                  </h3>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="product-item">
+                  <span class="badge bg-success position-absolute m-3">100% Verificado</span>
+                  <figure>
+                    <a href="index.html" title="Product Title">
+                      <img src="images/slide-accesorie1_resultado.png" class="tab-image">
+                    </a>
+                  </figure>
+                  <h3>Bota industrial en negro</h3>
+                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary">
+                      <use xlink:href="#star-solid"></use>
+                    </svg> 4.5</span>
+                  <h3 style="font-size: 16px; font-weight: normal; text-transform: none;">
+                    Cumplimiento con las normas mexicanas para la industria, cocido, suela antiderrapante.
+                  </h3>
                 </div>
               </div>
 
@@ -1721,100 +1400,7 @@
     </div>
   </section>
 
-  <section id="latest-blog" class="py-5">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="section-header d-flex align-items-center justify-content-between my-5">
-          <h2 class="section-title">Our Recent Blog</h2>
-          <div class="btn-wrap align-right">
-            <a href="#" class="d-flex align-items-center nav-link">Read All Articles <svg width="24" height="24">
-                <use xlink:href="#arrow-right"></use>
-              </svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <article class="post-item card border-0 shadow-sm p-3">
-            <div class="image-holder zoom-effect">
-              <a href="#">
-                <img src="images/post-thumb-1.jpg" alt="post" class="card-img-top">
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="post-meta d-flex text-uppercase gap-3 my-2 align-items-center">
-                <div class="meta-date"><svg width="16" height="16">
-                    <use xlink:href="#calendar"></use>
-                  </svg>22 Aug 2021</div>
-                <div class="meta-categories"><svg width="16" height="16">
-                    <use xlink:href="#category"></use>
-                  </svg>tips & tricks</div>
-              </div>
-              <div class="post-header">
-                <h3 class="post-title">
-                  <a href="#" class="text-decoration-none">Top 10 casual look ideas to dress up your kids</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipi elit. Aliquet eleifend viverra enim tincidunt donec
-                  quam. A in arcu, hendrerit neque dolor morbi...</p>
-              </div>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-4">
-          <article class="post-item card border-0 shadow-sm p-3">
-            <div class="image-holder zoom-effect">
-              <a href="#">
-                <img src="images/post-thumb-2.jpg" alt="post" class="card-img-top">
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="post-meta d-flex text-uppercase gap-3 my-2 align-items-center">
-                <div class="meta-date"><svg width="16" height="16">
-                    <use xlink:href="#calendar"></use>
-                  </svg>25 Aug 2021</div>
-                <div class="meta-categories"><svg width="16" height="16">
-                    <use xlink:href="#category"></use>
-                  </svg>trending</div>
-              </div>
-              <div class="post-header">
-                <h3 class="post-title">
-                  <a href="#" class="text-decoration-none">Latest trends of wearing street wears supremely</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipi elit. Aliquet eleifend viverra enim tincidunt donec
-                  quam. A in arcu, hendrerit neque dolor morbi...</p>
-              </div>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-4">
-          <article class="post-item card border-0 shadow-sm p-3">
-            <div class="image-holder zoom-effect">
-              <a href="#">
-                <img src="images/post-thumb-3.jpg" alt="post" class="card-img-top">
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="post-meta d-flex text-uppercase gap-3 my-2 align-items-center">
-                <div class="meta-date"><svg width="16" height="16">
-                    <use xlink:href="#calendar"></use>
-                  </svg>28 Aug 2021</div>
-                <div class="meta-categories"><svg width="16" height="16">
-                    <use xlink:href="#category"></use>
-                  </svg>inspiration</div>
-              </div>
-              <div class="post-header">
-                <h3 class="post-title">
-                  <a href="#" class="text-decoration-none">10 Different Types of comfortable clothes</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipi elit. Aliquet eleifend viverra enim tincidunt donec
-                  quam. A in arcu, hendrerit neque dolor morbi...</p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
+  <hr>
 
   <section class="py-5">
     <div class="container-fluid">
@@ -1877,6 +1463,7 @@
             </div>
           </div>
         </div>
+
 
         <div class="col">
           <div class="card mb-3 border-0">
@@ -1953,7 +1540,6 @@
 
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="footer-menu">
-
             <img src="images/LogoFace1.jpg" alt="logo" class="img-fluid" height="340" width="140"
               style="margin-top: 40px;">
             <div class="social-links mt-5">
@@ -2016,9 +1602,9 @@
           <div class="footer-menu">
             <h5 class="widget-title">Nuestro servicio</h5>
             <p>Investigación de productos innovadores, que sean de calidad y a buen precio. BBB.</p>
-            <form class="d-flex mt-3 gap-0" role="newsletter">
-              <input class="form-control rounded-start rounded-0 bg-light" type="email" placeholder="Email Address"
-                aria-label="Email Address">
+            <form id="newsletter-form" class="d-flex mt-3 gap-0" role="newsletter">
+              <input class="form-control rounded-start rounded-0 bg-light" type="email" id="user_email"
+                placeholder="Email Address" aria-label="Email Address" required>
               <button class="btn btn-dark rounded-end rounded-0" type="submit">Subscribe</button>
             </form>
           </div>
@@ -2034,8 +1620,12 @@
           <p style="font-size: 12px;">© 2008 - 2025 RECOTT</p>
         </div>
         <div class="col-md-6 credit-link text-start text-md-end">
-          <p style="font-size: 12px;">Comercializadora de productos en general, consultoría / asesoramiento e
-            integración</a></p>
+          <p style="font-size: 12px;"> Investigación y comercialización de productos, consultoría /
+            asesoramiento e
+            integración.
+            <img src="images/icon-wine-glass-bottle.png" alt="Icono"
+              style="float: right; width: 20px; height: auto; margin-left: 10px;">
+          </p>
         </div>
       </div>
     </div>
@@ -2047,6 +1637,28 @@
     crossorigin="anonymous"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+
+  <!-- SCRIPT DE EMAILJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("8kycB2zNkXBXrCvBP");
+
+    document.getElementById("newsletter-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("user_email").value;
+
+      emailjs.send("service_yzl45yw", "template_ruxr8gb", {
+        user_email: email,
+      })
+        .then(function () {
+          alert("✅ Correo enviado con éxito");
+          document.getElementById("newsletter-form").reset();
+        }, function (error) {
+          alert("❌ Error: " + JSON.stringify(error));
+        });
+    });
+  </script>
 
 </body>
 
