@@ -1998,6 +1998,52 @@
     }, true);
   </script>
 
+  <style>
+  .video-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .video-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const videos = document.querySelectorAll("video");
+
+    videos.forEach(video => {
+      // Verificar si ya fue procesado
+      if (video.parentElement.classList.contains("video-container")) return;
+
+      // Crear contenedor
+      const wrapper = document.createElement("div");
+      wrapper.className = "video-container";
+
+      // Crear badge
+      const badge = document.createElement("div");
+      badge.className = "video-badge";
+      badge.textContent = "▶ Video";
+
+      // Insertar wrapper en el DOM
+      video.parentNode.insertBefore(wrapper, video);
+      wrapper.appendChild(video);
+      wrapper.appendChild(badge);
+    });
+  });
+</script>
+
+
 
 
 </body>
