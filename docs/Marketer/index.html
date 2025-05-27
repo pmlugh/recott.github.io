@@ -1949,13 +1949,20 @@
   <!-- ELIMINA LINKS BASURA -->
   <script>
     document.addEventListener("click", function (e) {
-      // Si el clic viene de dentro de un video, no bloquea nada
+      // Ignorar clics dentro de videos
       if (e.target.closest('video')) return;
 
-      const link = e.target.closest("a[href]");
-      if (!link) return;
+      // Buscar el elemento clicado o su ancestro que sea <a> o tenga data-href
+      let el = e.target;
+      while (el && el !== document) {
+        if (el.tagName === 'A' && el.hasAttribute('href')) break;
+        if (el.hasAttribute && el.hasAttribute('data-href')) break;
+        el = el.parentNode;
+      }
+      if (!el || el === document) return;
 
-      const href = link.getAttribute("href");
+      // Obtener href o data-href
+      const href = el.getAttribute('href') || el.getAttribute('data-href') || '';
 
       const rutasBloqueadas = [
         "index.html",
@@ -1964,15 +1971,17 @@
         "pmlugh.github.io"
       ];
 
+      // Verificar si href contiene alguna ruta bloqueada
       const debeBloquear = rutasBloqueadas.some(ruta => href.includes(ruta));
 
       if (debeBloquear) {
         e.preventDefault();
         e.stopImmediatePropagation();
-        console.warn("Bloqueado enlace a:", href);
+        console.warn("Bloqueado enlace o icono con href:", href);
       }
     }, true);
   </script>
+
 
 </body>
 
