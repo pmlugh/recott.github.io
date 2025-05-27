@@ -1969,7 +1969,8 @@
 
       const rutasBloqueadas = [
         "index.html",
-        "/git-repository/recott.gith      "/recott.github.io/Marketer",
+        "/git-repository/recott.github.io",
+        "/recott.github.io/Marketer",
         "pmlugh.github.io"
       ];
 
@@ -1989,7 +1990,9 @@
       const link = e.target.closest('a[href]');
       if (!link) return;
 
-      const href = link.getAttribute('href');      // Bloquear si el href es "#" e
+      const href = link.getAttribute('href');
+
+      // Bloquear si el href es "#" exactamente
       if (href.trim() === "#") {
         e.preventDefault();
         e.stopImmediatePropagation();
@@ -2019,28 +2022,31 @@
   </style>
 
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const videos = document.querySelectorAll("video");
+    document.addEventListener("DOMContentLoaded", function () {
+      const videos = document.querySelectorAll("video");
 
-    videos.forEach(video => {
-      // Verificar si ya fue procesado
-      if (video.parentElement.classList.contains("video-container")) return;
+      videos.forEach(video => {
+        // Verificar si ya fue procesado
+        if (video.parentElement.classList.contains("video-container")) return;
 
-      // Crear contenedor
-      const wrapper = document.createElement("div");
-      wrapper.className = "video-contner";
-Crear badge
-      const badge = document.createElement("div");
-      badge.className = "video-badge";
-      badge.textContent = "▶ Video";
+        // Crear contenedor
+        const wrapper = document.createElement("div");
+        wrapper.className = "video-container";
 
-      // Insertar wrapper en el DOM
-      video.parentNode.insertBefore(wrapper, video);
-      wrapper.appendChild(video);
-      wrapper.appendChild(badge);
+        // Crear badge
+        const badge = document.createElement("div");
+        badge.className = "video-badge";
+        badge.textContent = "▶ Video";
+
+        // Insertar wrapper en el DOM
+        video.parentNode.insertBefore(wrapper, video);
+        wrapper.appendChild(video);
+        wrapper.appendChild(badge);
+      });
     });
-  });
   </script>
+
+
 
 
 </body>
