@@ -2156,7 +2156,7 @@
   </script>
 
   <!-- MODIFICA PRECIOS POR PRODUCTO -->
-  <script>
+  <!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
       function makePriceEditable(priceEl, productId) {
         priceEl.style.cursor = "pointer";
@@ -2214,11 +2214,11 @@
         makePriceEditable(priceEl, productId);
       });
     });
-  </script>
+  </script> -->
 
   <!-- GESTIÓN DE PRECIOS GOOGLESHEET -->
   <script>
-    const URL_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsWCApwrS-D42cfmQZBLs2YNXy2TTBs87WhWshoEBljmH7AU_syVhuLtGWWQuzZX-JZgdSHA0P0adi/pub?gid=0&single=true&output=csv";
+    const URL_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRk7RxofMOdSKpfW-G7yRQfoVUbUkacF0UDIhBHkUtZIsBng-cN9gZ-5th_hQpozF_dr2oUN8LLE2Vp/pub?output=csv";
 
     fetch(URL_CSV)
       .then(response => response.text())
