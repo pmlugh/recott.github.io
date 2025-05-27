@@ -1982,6 +1982,23 @@
     }, true);
   </script>
 
+  <script>
+    document.addEventListener("click", function (e) {
+      const link = e.target.closest('a[href]');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+
+      // Bloquear si el href es "#" exactamente
+      if (href.trim() === "#") {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        console.warn("Enlace bloqueado:", link);
+      }
+    }, true);
+  </script>
+
+
 
 </body>
 
