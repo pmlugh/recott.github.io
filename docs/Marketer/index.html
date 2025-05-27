@@ -2218,25 +2218,23 @@
 
   <!-- GESTIÓN DE PRECIOS GOOGLESHEET -->
   <script>
-    function formatPriceMX(price) {
-      const clean = price.replace(/"/g, '').replace(',', '');
-      const number = parseFloat(clean);
-      return isNaN(number) ? price : number.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
-    }
+    const URL_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRk7RxofMOdSKpfW-G7yRQfoVUbUkacF0UDIhBHkUtZIsBng-cN9gZ-5th_hQpozF_dr2oUN8LLE2Vp/pub?output=csv";
 
-    fetch("TU_URL_DE_GOOGLE_SHEETS_PARA_CSV")
-      .then(res => res.text())
+    fetch(URL_CSV)
+      .then(response => response.text())
       .then(csv => {
-        const lines = csv.trim().split("\n").slice(1); // quitar encabezado
-        lines.forEach(row => {
-          const [id, , precio] = row.split(",");
-          const span = document.querySelector(`[data-id="${id.trim()}"]`);
-          if (span) span.textContent = formatPriceMX(precio.trim());
+        const rows = csv.trim().split("\n").slice(1); // Omitir encabezado
+        rows.forEach(row => {
+          const [id, , precio] = row.split(","); // Ignoramos el campo 'producto'
+          const el = document.querySelector(`.product-price[data-id="${id.trim()}"]`);
+          if (el) {
+            el.textContent = "MX$" + precio.trim();
+            // el.textContent = precio.trim();
+          }
         });
       })
       .catch(err => console.error("Error al cargar precios:", err));
   </script>
-
 
 
 
