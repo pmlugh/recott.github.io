@@ -1254,8 +1254,8 @@
                         </a>
                       </figure>
                       <h3 style="font-size: 15px;">Audífonos Inalambricos Xiaomi Redmi Buds 6 Active Black Color Negro
-                        Luz Negro - 1 pieza. MX$$324.36
-                        <span class="product-price">MX$00.00</span>
+                        Luz Negro - 1 pieza
+                        <span class="product-price" data-id="26">MX$00.00</span>
                       </h3>
                       <span class="qty" style="color: #FFA500; font-weight: bold;">En Stock</span><span
                         class="rating"><svg width="24" height="24" class="text-primary">
@@ -1288,8 +1288,8 @@
                         </a>
                       </figure>
                       <h3 style="font-size: 15px;">Manos Libres Binden F400 Bluetooth Micrófono Sonido Aislante - 1
-                        pieza. MX$1,259.99
-                        <span class="product-price">MX$00.00</span>
+                        pieza
+                        <span class="product-price" data-id="27">MX$00.00</span>
                       </h3>
                       <span class="qty" style="color: #FFA500; font-weight: bold;">En Stock</span><span
                         class="rating"><svg width="24" height="24" class="text-primary">
@@ -1321,9 +1321,8 @@
                             width="240" height="235">
                         </a>
                       </figure>
-                      <h3 style="font-size: 15px;">Apoyabrazos Ergonómico Para Computadora, Mano, Hombro - 1 pieza.
-                        $837,18
-                        <span class="product-price">MX$00.00</span>
+                      <h3 style="font-size: 15px;">Apoyabrazos Ergonómico Para Computadora, Mano, Hombro - 1 pieza
+                        <span class="product-price" data-id="28">MX$00.00</span>
                       </h3>
                       <span class="qty" style="color: #FFA500; font-weight: bold;">En Stock</span><span
                         class="rating"><svg width="24" height="24" class="text-primary">
@@ -1355,8 +1354,8 @@
                             width="240" height="235">
                         </a>
                       </figure>
-                      <h3 style="font-size: 15px;">Soporte Escritorio 2 Monitores - 1 pieza. $899.00
-                        <span class="product-price">MX$00.00</span>
+                      <h3 style="font-size: 15px;">Soporte Escritorio 2 Monitores - 1 pieza
+                        <span class="product-price" data-id="29">MX$00.00</span>
                       </h3>
                       <span class="qty" style="color: #FFA500; font-weight: bold;">En Stock</span><span
                         class="rating"><svg width="24" height="24" class="text-primary">
@@ -1390,8 +1389,8 @@
                             width="240" height="235">
                         </a>
                       </figure>
-                      <h3 style="font-size: 15px;">Traductor de voz inteligente - 1 pieza. MX$386.700
-                        <span class="product-price">MX$00.00</span>
+                      <h3 style="font-size: 15px;">Traductor de voz inteligente - 1 pieza
+                        <span class="product-price" data-id="30">MX$00.00</span>
                       </h3>
                       <span class="qty" style="color: #FFA500; font-weight: bold;">En Stock</span><span
                         class="rating"><svg width="24" height="24" class="text-primary">
@@ -1451,7 +1450,7 @@
           <div class="products-carousel swiper">
             <div class="swiper-wrapper">
 
-              <div class="product-item swiper-slide" style="flex: 0 0 240px;">
+              <!-- <div class="product-item swiper-slide" style="flex: 0 0 240px;">
                 <span class="badge bg-success position-absolute m-3">100% Verificado</span>
                 <figure>
                   <a href="index.html" title="Product Title">
@@ -1460,8 +1459,8 @@
                   </a>
                 </figure>
                 <h3 style="font-size: 15px;">Audífonos Inalambricos Xiaomi Redmi Buds 6 Active Black Color Negro Luz
-                  Negro - 1 pieza. MX$$324.36
-                  <span class="product-price">MX$00.00</span>
+                  Negro - 1 pieza
+                  <span class="product-price" data-id="20">MX$00.00</span>
                 </h3>
                 <span class="qty" style="color: #FFA500; font-weight: bold;">En Stock</span><span class="rating"><svg
                     width="24" height="24" class="text-primary">
@@ -1740,7 +1739,30 @@
                   <li>97% poliéster, 3% elastano.</li>
                   <li>Diseño casual.</li>
                 </ul>
-              </div>
+              </div> -->
+
+              <script>
+                document.querySelectorAll(".swiper-slide").forEach(slide => {
+                  slide.style.display = "block"; // Asegurar que los slides sean visibles
+                  slide.style.width = "240px"; // Dar espacio adecuado dentro del carrusel
+                  slide.style.opacity = "1"; // Evitar cualquier efecto de opacidad
+                });
+
+                console.log("🛠 Ajuste de estilos aplicado a los slides.");
+
+                setTimeout(() => {
+                  if (window.swiperInstance) {
+                    window.swiperInstance.update();
+                    console.log("🔄 Swiper actualizado manualmente.");
+                  } else {
+                    console.warn("⚠ No se encontró la instancia de Swiper.");
+                  }
+                }, 500);
+              </script>
+
+                           
+              
+              </section>
 
             </div>
           </div>
@@ -1857,9 +1879,8 @@
               <div class="col-md-10">
                 <div class="card-body p-0">
                   <h5 class="text-white">Transaccionalidad 100% segura</h5>
-                  <p class="card-text" style="color: gray;">Medidas de seguridad en el proceso y protección en las
-                    transacciones financieras
-                    y comerciales.</p>
+                  <p class="card-text" style="color: gray;">Medidas de seguridad en el proceso y protección de las
+                    transacciones comerciales y comerciales.</p>
                 </div>
               </div>
             </div>
@@ -2217,7 +2238,7 @@
   </script> -->
 
   <!-- GESTIÓN DE PRECIOS GOOGLESHEET -->
-  <!-- <script>
+  <script>
     const URL_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRk7RxofMOdSKpfW-G7yRQfoVUbUkacF0UDIhBHkUtZIsBng-cN9gZ-5th_hQpozF_dr2oUN8LLE2Vp/pub?output=csv";
     
     fetch(URL_CSV)
@@ -2237,33 +2258,8 @@
         });
       })
       .catch(err => console.error("Error al cargar precios:", err));
-  </script> -->
-
-  <script>
-    const URL_CSV_BASE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRk7RxofMOdSKpfW-G7yRQfoVUbUkacF0UDIhBHkUtZIsBng-cN9gZ-5th_hQpozF_dr2oUN8LLE2Vp/pub?output=csv";
-    const URL_CSV = URL_CSV_BASE + "&cache_bust=" + new Date().getTime();
-
-    fetch(URL_CSV)
-      .then(response => response.text())
-      .then(csv => {
-        const rows = csv.trim().split("\n").slice(1); // Omitir encabezado
-        rows.forEach(row => {
-          const [id, , precio] = row.split(","); // Ignoramos el campo 'producto'
-          const el = document.querySelector(`.product-price[data-id="${id.trim()}"]`);
-          if (el) {
-            const precioNum = parseFloat(precio);
-            if (!isNaN(precioNum) && precioNum > 0) {
-              el.textContent = "MX$" + precioNum.toLocaleString("es-MX", {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-              });
-            }
-            // Si precio no válido, no cambia el contenido
-          }
-        });
-      })
-      .catch(err => console.error("Error al cargar precios:", err));
   </script>
+
 
 
 </body>
