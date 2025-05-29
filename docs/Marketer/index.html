@@ -1422,11 +1422,13 @@
       </div>
   </section>
 
-  <section class="py-6 overflow-hidden">
+  <!-- <section class="py-6 overflow-hidden"> -->
+  <!-- SE CAMBIO EL TÍTULO DE SECTION PARA IDENTIFICAR LOS PRODUCTOS POPULARES   -->
+  <section id="populares" class="py-6 overflow-hidden">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-  
+
           <div class="section-header d-flex justify-content-between">
             <!-- <h2 class="section-title">Productos más populares</h2> -->
             <h3 style="margin-bottom: 2px;">Productos más populares</h3>
@@ -1438,52 +1440,18 @@
               </div>
             </div>
           </div>
-  
+
           <hr>
-  
+
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-  
+
           <div class="products-carousel swiper">
             <div class="swiper-wrapper">
-  
-              <!-- <div class="product-item swiper-slide" style="flex: 0 0 240px;">
-                    <span class="badge bg-success position-absolute m-3">100% Verificado</span>
-                    <figure>
-                      <a href="index.html" title="Product Title">
-                        <img src="images/slide-gadgets1_resultado.png" oncontextmenu="return false;" class="tab-image"
-                          width="240" height="235">
-                      </a>
-                    </figure>
-                    <h3 style="font-size: 15px;">Audífonos Inalambricos Xiaomi Redmi Buds 6 Active Black Color Negro Luz
-                      Negro - 1 pieza
-                      <span class="product-price" data-id="20">MX$00.00</span>
-                    </h3>
-                    <span class="qty" style="color: #FFA500; font-weight: bold;">En Stock</span><span class="rating"><svg
-                        width="24" height="24" class="text-primary">
-                        <use xlink:href="#star-solid"></use>
-                      </svg>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-award-fill"
-                        viewBox="0 0 16 16">
-                        <path
-                          d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864z" />
-                        <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z" />
-                      </svg>
-                      4.5</span>
-                    <ul
-                      style="font-size: 13px; font-weight: normal; text-transform: none; color: #000; padding-left: 20px;">
-                      <li>Inalámbrico.</li>
-                      <li>Resistente al agua.</li>
-                      <li>Con luz LED.</li>
-                      <li>Con micrófono.</li>
-                      <li>Duración de batería 30h.</li>
-                  </div>
-    
 
-              
-  
+
             </div>
           </div>
           <!-- / products-carousel -->
@@ -1760,7 +1728,7 @@
           alert("❌ Error: " + JSON.stringify(error));
         });
     });
-  </script>  
+  </script>
 
   <!-- ELIMINA CONTROLES DE VIDEO -->
   <script>
@@ -1879,10 +1847,10 @@
         wrapper.appendChild(badge);
       });
     });
-  </script>  
+  </script>
 
   <!-- GESTIÓN DE PRECIOS GOOGLESHEET -->
-  <script>
+  <!-- <script>
     const URL_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRk7RxofMOdSKpfW-G7yRQfoVUbUkacF0UDIhBHkUtZIsBng-cN9gZ-5th_hQpozF_dr2oUN8LLE2Vp/pub?output=csv";
 
     fetch(URL_CSV)
@@ -1902,7 +1870,151 @@
         });
       })
       .catch(err => console.error("Error al cargar precios:", err));
+  </script> -->
+
+  <!-- ELIMINA CACHE DEL SITIO sin botón -->
+  <!-- <script>
+    if ('caches' in window) {
+      caches.keys().then(function (names) {
+        for (let name of names) {
+          caches.delete(name);
+          console.log(`Cache eliminado: ${name}`);
+        }
+      }).catch(err => {
+        console.error('Error eliminando caché:', err);
+      });
+    } else {
+      console.warn('El navegador no soporta la API Cache.');
+    }
+  </script> -->
+
+  <!-- GESTIÓN DE PRECIOS GOOGLE SHEETS -->
+  <!-- <script>
+    const URL_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRk7RxofMOdSKpfW-G7yRQfoVUbUkacF0UDIhBHkUtZIsBng-cN9gZ-5th_hQpozF_dr2oUN8LLE2Vp/pub?output=csv";
+    
+    function actualizarPrecios() {
+       const timestamp = new Date().getTime(); // Generar nuevo timestamp cada vez
+       const urlConCacheBusting = `${URL_CSV}&t=${timestamp}`; // Concatenar con la URL
+
+      fetch(URL_CSV)
+        .then(response => response.text())
+        .then(csv => {
+          const rows = csv.trim().split("\n").slice(1); // Omitir encabezado
+          rows.forEach(row => {
+            const [id, , precio] = row.split(",");
+            const els = document.querySelectorAll(`.product-price[data-id="${id.trim()}"]`);
+            els.forEach(el => {
+              el.textContent = "MX$" + parseFloat(precio).toLocaleString("es-MX", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+              });
+            });
+          });
+        })
+        .catch(err => console.error("Error al cargar precios:", err));
+    }
+
+    // Llamada inicial para actualizar precios en el catálogo principal
+    document.addEventListener("DOMContentLoaded", actualizarPrecios);
+  </script> -->
+
+  <script>
+    const URL_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRk7RxofMOdSKpfW-G7yRQfoVUbUkacF0UDIhBHkUtZIsBng-cN9gZ-5th_hQpozF_dr2oUN8LLE2Vp/pub?output=csv";
+    const productosPopulares = [1, 2, 3, 4, 5, 7, 8, 9];
+
+    function actualizarPrecios(callback) {
+      const timestamp = new Date().getTime();
+      const urlConCacheBusting = `${URL_CSV}&t=${timestamp}`;
+
+      fetch(urlConCacheBusting)
+        .then(response => response.text())
+        .then(csv => {
+          const rows = csv.trim().split("\n").slice(1);
+          rows.forEach(row => {
+            const [id, , precio] = row.split(",");
+            const els = document.querySelectorAll(`.product-price[data-id="${id.trim()}"]`);
+            els.forEach(el => {
+              el.textContent = "MX$" + parseFloat(precio).toLocaleString("es-MX", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+              });
+            });
+          });
+
+          if (typeof callback === "function") callback();
+        })
+        .catch(err => console.error("❌ Error al cargar precios:", err));
+    }
+
+    function cargarProductosPopularesSuavemente() {
+      const productos = Array.from(document.querySelectorAll('.product-item'));
+      const carruselWrapper = document.querySelector('#populares .swiper-wrapper');
+
+      if (!carruselWrapper) {
+        console.error("🚫 No se encontró '.swiper-wrapper' dentro de #populares.");
+        return;
+      }
+
+      const popularesFiltrados = productos.filter(producto => {
+        const precio = producto.querySelector('[data-id]');
+        if (!precio) return false;
+        const id = parseInt(precio.getAttribute('data-id'), 10);
+        return productosPopulares.includes(id);
+      });
+
+      let index = 0;
+
+      function clonarUnoPorUno() {
+        if (index >= popularesFiltrados.length) {
+          iniciarSwiper(); // solo cuando todos estén listos
+          return;
+        }
+
+        const original = popularesFiltrados[index];
+        const clon = original.cloneNode(true);
+        clon.classList.add('swiper-slide');
+        clon.style.flex = "0 0 240px";
+        carruselWrapper.appendChild(clon);
+        index++;
+
+        // Clonamos de uno en uno cada 50ms
+        setTimeout(clonarUnoPorUno, 50);
+      }
+
+      function iniciarSwiper() {
+        if (carruselWrapper.children.length > 0) {
+          new Swiper('#populares .products-carousel', {
+            loop: carruselWrapper.children.length > 2,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+              nextEl: '.products-carousel-next',
+              prevEl: '.products-carousel-prev'
+            },
+            pagination: {
+              el: '.swiper-pagination',
+            },
+            breakpoints: {
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 }
+            }
+          });
+        } else {
+          console.warn("⚠ No hay productos populares para mostrar en el carrusel.");
+        }
+      }
+
+      clonarUnoPorUno(); // Empieza la clonación suave
+    }
+
+    // Esperar a que se cargue todo (incluyendo imágenes)
+    window.onload = function () {
+      actualizarPrecios(cargarProductosPopularesSuavemente);
+    };
   </script>
+
+
+
 
   <!-- ELIMINA CACHE DEL SITIO -->
   <!-- <button id="btn-clear-cache">Eliminar caché del sitio</button>
@@ -1923,7 +2035,74 @@
       }
     });
   </script> -->
-  
+
+  <!-- ELIMINA CACHE DEL SITIO sin botón -->
+  <!-- <script>
+    if ('caches' in window) {
+      caches.keys().then(function (names) {
+        for (let name of names) {
+          caches.delete(name);
+          console.log(`Cache eliminado: ${name}`);
+        }
+      }).catch(err => {
+        console.error('Error eliminando caché:', err);
+      });
+    } else {
+      console.warn('El navegador no soporta la API Cache.');
+    }
+  </script> -->
+
+  <!-- 👇 PEGA LOS PRODUCTOS MÁS POPULARES QUE CLONA DEL CATÁLOGO -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const productosPopulares = [1, 2, 3, 4, 5, 7, 8, 9]; // IDs que quieras mostrar
+
+      const productos = document.querySelectorAll('.product-item');
+      const carruselWrapper = document.querySelector('#populares .swiper-wrapper');
+
+      if (!carruselWrapper) {
+        console.error("🚫 No se encontró '.swiper-wrapper' dentro de #populares.");
+        return;
+      } else {
+        console.log("✅ swiper-wrapper encontrado.");
+      }
+
+      productos.forEach(producto => {
+        const precio = producto.querySelector('[data-id]');
+        if (precio) {
+          const id = parseInt(precio.getAttribute('data-id'), 10);
+          if (productosPopulares.includes(id)) {
+            const clon = producto.cloneNode(true);
+            clon.classList.add('swiper-slide');
+            clon.style.flex = "0 0 240px";
+            carruselWrapper.appendChild(clon);
+          }
+        }
+      });
+
+      if (carruselWrapper.children.length > 0) {
+        new Swiper('#populares .products-carousel', {
+          loop: carruselWrapper.children.length > 2,
+          slidesPerView: 1,
+          spaceBetween: 20,
+          navigation: {
+            nextEl: '.products-carousel-next',
+            prevEl: '.products-carousel-prev'
+          },
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          breakpoints: {
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+          }
+        });
+      } else {
+        console.warn("⚠ No hay productos populares para mostrar en el carrusel.");
+      }
+    });
+  </script>
+
   <!-- ELIMINA CACHE DEL SITIO sin botón -->
   <script>
     if ('caches' in window) {
@@ -1939,7 +2118,6 @@
       console.warn('El navegador no soporta la API Cache.');
     }
   </script>
-
 
 
 </body>
