@@ -2868,6 +2868,21 @@
     }
   </script>
 
+<!-- ELIMINA CACHE DEL SITIO Ver2 -->  
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Cambia 'productos.html' por el nombre exacto de tu página
+      if (window.location.pathname.endsWith('productos.html')) {
+        document.querySelectorAll('td.numero').forEach(td => {
+          let texto = td.textContent.trim().replace(',', '.');
+          let num = Number(texto);
+          if (isNaN(num)) num = 0;
+          td.textContent = num;
+        });
+      }
+    });
+  </script> -->
+
 </body>
 
 </html>
