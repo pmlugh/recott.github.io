@@ -2871,6 +2871,41 @@
     }
   </script>
 
+<!-- ELIMINA CACHE DEL SITIO Ver2 -->  
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Cambia 'productos.html' por el nombre exacto de tu página
+      if (window.location.pathname.endsWith('productos.html')) {
+        document.querySelectorAll('td.numero').forEach(td => {
+          let texto = td.textContent.trim().replace(',', '.');
+          let num = Number(texto);
+          if (isNaN(num)) num = 0;
+          td.textContent = num;
+        });
+      }
+    });
+  </script> -->
+
+  <!-- ELIMINA CACHE DEL SITIO Ver3 --> 
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.location.pathname.endsWith('productos.html')) {
+        if ('caches' in window) {
+          caches.keys().then(function (names) {
+            for (let name of names) {
+              caches.delete(name);
+              console.log(`Cache eliminado: ${name}`);
+            }
+          }).catch(err => {
+            console.error('Error eliminando caché:', err);
+          });
+        } else {
+          console.warn('El navegador no soporta la API Cache.');
+        }
+      }
+    });
+  </script> -->
+
 
 </body>
 
