@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Market74 | Soluciones Industriales y Tecnológicas</title>
+  <title>RECOTT marketer | Soluciones Industriales y Tecnológicas</title>
   <!-- Preconnect para fuentes y mejorar rendimiento -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -327,6 +327,15 @@
       border-top: 1px solid #e0e0e0;
     }
 
+    /* Estilo para links del footer */
+    .footer-content a {
+      color: #0f62ac;
+      text-decoration: none;
+    }
+    .footer-content a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 768px) {
       h1 {
         font-size: 2.2rem;
@@ -361,39 +370,47 @@
 
 <!-- Barra superior minimalista, estilo IBM: accesibilidad -->
 <div class="top-bar">
-  <a href="#">Contáctanos</a>
-  <a href="#">Soporte técnico</a>
+  <a href="#contacto">Contáctanos</a>
+  <a href="#soporte">Soporte técnico</a>
   <a href="#">Partner Program</a>
 </div>
 
-<!-- Navegación principal -->
+<!-- Navegación principal con links de anclaje funcionales -->
+<!-- Navegación principal con links de anclaje funcionales -->
 <div class="navbar">
-  <div class="logo-area">
-    <h1>Market74</h1>
+  <div class="logo-area" style="text-align: left;">
+    <img src="Recott_SinFondo6.svg" alt="RECOTT Logo" style="height: 50px; display: block;">
     <div class="sub">Comercializadora · Integración estratégica</div>
   </div>
+  <!-- <div class="logo-area">
+    <img src="Recott_SinFondo6.svg" alt="RECOTT Logo" style="height: 50px; width: auto; display: block;">
+    <div class="sub">Comercializadora · Integración estratégica</div>
+  </div> -->
+  <!-- <div class="logo-area">
+    <h1>Market74</h1>
+    <div class="sub">Comercializadora · Integración estratégica</div>
+  </div> -->
   <div class="nav-links">
-    <a href="#">Inicio</a>
-    <a href="#">Soluciones</a>
-    <a href="#">Catálogo</a>
-    <a href="#">Industria</a>
-    <a href="#">Contacto</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Soluciones</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#contacto">Contacto</a>
   </div>
 </div>
 
-<!-- Hero (IBM sobrio) -->
-<section class="hero">
+<!-- Hero (IBM sobrio) con ID para anclaje -->
+<section id="inicio" class="hero">
   <div class="container hero-grid">
     <div class="hero-content">
       <h1>Comercialización, integración y consultoría</h1>
       <p>Abarcamos gran cobertura del mercado, brindando precio, calidad y servicio al cliente. Tecnología, industria y soluciones under one roof.</p>
-      <a href="#" class="btn-ibm">Conocer más <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
+      <a href="#catalogo" class="btn-ibm">Conocer más <i class="fas fa-arrow-right" style="margin-left: 6px; font-size: 0.8rem;"></i></a>
     </div>
     <div class="contact-hero">
       <h3><i class="fas fa-headset"></i> Soporte directo</h3>
-      <p><i class="fas fa-phone-alt"></i> +52 662.342.5565</p>
-      <p><i class="fas fa-phone-alt"></i> +52 473.181.7324</p>
-      <p><i class="fas fa-envelope"></i> ventas@market74.mx</p>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:+526623425565" style="text-decoration: none; color: inherit;">+52 662.342.5565</a></p>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:+524731817324" style="text-decoration: none; color: inherit;">+52 473.181.7324</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:ventas@market74.mx" style="text-decoration: none; color: inherit;">contacto@recott.com.mx</a></p>
       <hr>
       <p style="font-size: 0.8rem; margin-top: 8px;"><i class="fas fa-clock"></i> L-V 9:00 - 18:00 (GMT-6)</p>
     </div>
@@ -401,7 +418,7 @@
 </section>
 
 <!-- Servicios/Ejes de negocio, estilo tarjetas limpias -->
-<div class="services-section">
+<div id="servicios" class="services-section">
   <div class="container">
     <h2>Capacidades estratégicas</h2>
     <div class="section-subhead">Soluciones cross-industry con enfoque técnico y logístico</div>
@@ -441,7 +458,7 @@
 </div>
 
 <!-- Sección catálogo de productos y condiciones de servicio -->
-<div class="catalog-section">
+<div id="catalogo" class="catalog-section">
   <div class="container">
     <div class="catalog-intro">
       <h2>Catálogo de productos</h2>
@@ -465,12 +482,12 @@
 </div>
 
 <!-- Llamada a la acción profesional (sin exageraciones) -->
-<div class="cta-section">
+<div id="contacto" class="cta-section">
   <div class="container">
     <h2>¿Listo para optimizar su cadena de suministro?</h2>
     <p>Le asesoramos en integración de equipos, investigación de mercado y consultoría técnica. Nuestro equipo le responderá en menos de 24 horas.</p>
-    <a href="#" class="btn-ibm" style="margin-right: 12px;"><i class="fas fa-chevron-right"></i> Solicitar cotización</a>
-    <a href="#" class="btn-ibm-outline">Ver catálogo completo</a>
+    <a href="#" class="btn-ibm" id="btnCotizar" style="margin-right: 12px;"><i class="fas fa-chevron-right"></i> Solicitar cotización</a>
+    <a href="#" class="btn-ibm-outline" id="btnCatalogo">Ver catálogo completo</a>
   </div>
 </div>
 
@@ -478,20 +495,64 @@
 <footer>
   <div class="container footer-content">
     <div>
-      <strong>Market74</strong><br>
+      <strong>RECOTT </strong>marketer<br>
       Comercialización, investigación e integración<br>
-      © 2025 Market74 – Todos los derechos reservados.
+      © 2026 RECOTT – Todos los derechos reservados.
     </div>
     <div>
-      <i class="fas fa-map-marker-alt"></i> Oficinas comerciales: Hermosillo / Querétaro<br>
+      <i class="fas fa-map-marker-alt"></i> Oficinas comerciales: Hermosillo / Guanajuato<br>
       <i class="fas fa-globe"></i> Cobertura nacional e internacional<br>
       <i class="fas fa-lock"></i> Privacidad y términos
     </div>
     <div>
-      <a href="#" style="text-decoration: none; color: #0f62ac;">Aviso de privacidad</a><br>
-      <a href="#" style="text-decoration: none; color: #0f62ac;">Condiciones de compra</a>
+      <a href="#" id="linkPrivacidad">Aviso de privacidad</a><br>
+      <a href="#" id="linkCondiciones">Condiciones de compra</a>
     </div>
   </div>
 </footer>
+
+<!-- Pequeño script para dar funcionalidad a los botones y links -->
+<script>
+  // Función simulada para acciones de contacto/cotización
+  function mostrarAlerta(mensaje) {
+    alert("RECOTT - Demo: " + mensaje + "\n(En un sitio real, esto redirigiría o abriría un formulario.)");
+  }
+
+  // Asignar eventos a los botones principales
+  document.getElementById('btnCotizar').addEventListener('click', function(e) {
+    e.preventDefault();
+    mostrarAlerta('Solicitud de cotización enviada. Pronto un asesor se comunicará con usted.');
+  });
+
+  document.getElementById('btnCatalogo').addEventListener('click', function(e) {
+    e.preventDefault();
+    mostrarAlerta('Redirigiendo al catálogo completo de productos (simulación).');
+  });
+
+  document.getElementById('linkPrivacidad').addEventListener('click', function(e) {
+    e.preventDefault();
+    mostrarAlerta('Aviso de privacidad: Sus datos están protegidos conforme a la ley aplicable.');
+  });
+
+  document.getElementById('linkCondiciones').addEventListener('click', function(e) {
+    e.preventDefault();
+    mostrarAlerta('Términos y condiciones de compra, envío y garantía disponibles para consulta.');
+  });
+
+  // Opcional: Añadir smooth scroll a los links de la barra superior
+  document.querySelectorAll('.top-bar a, .nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#') && href !== '#') {
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+</script>
 </body>
 </html>
