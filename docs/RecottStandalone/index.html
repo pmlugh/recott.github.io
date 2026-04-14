@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RECOTT servicios</title>  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --ibm-blue: #0f62fe;
+      --ibm-blue-hover: #0353e9;
+      --black: #161616;
+      --gray-100: #f4f4f4;
+      --gray-200: #e0e0e0;
+      --gray-300: #c6c6c6;
+      --gray-400: #a8a8a8;
+      --gray-500: #8d8d8d;
+      --gray-600: #6f6f6f;
+      --gray-700: #525252;
+      --gray-800: #393939;
+      --white: #ffffff;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+    
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      z-index: 1000;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    
+    .header.scrolled {
+      border-bottom-color: var(--gray-200);
+    }
+    
+    .header-inner {
+      max-width: 1584px;
+      margin: 0 auto;
+      padding: 0 16px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    @media (min-width: 672px) {
+      .header-inner {
+        padding: 0 32px;
+      }
+    }
+    
+    @media (min-width: 1056px) {
+      .header-inner {
+        padding: 0 64px;
+      }
+    }
+    
+    .logo {
+      font-size: 14px;
+      letter-spacing: 0.02em;
+    }
+    
+    .logo-bold {
+      font-weight: 600;
+      color: var(--black);
+    }
+    
+    .logo-light {
+      font-weight: 400;
+      color: var(--gray-700);
+    }
+    
+    .nav-desktop {
+      display: none;
+    }
+    
+    @media (min-width: 672px) {
+      .nav-desktop {
+        display: flex;
+        gap: 32px;
+      }
+    }
+    
+    .nav-link {
+      font-size: 14px;
+      color: var(--black);
+      transition: color 0.15s;
+    }
+    
+    .nav-link:hover {
+      color: var(--ibm-blue);
+    }
+    
+    .btn-primary {
+      display: none;
+      background: var(--ibm-blue);
+      color: var(--white);
+      padding: 12px 16px;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      transition: background 0.15s;
+    }
+    
+    .btn-primary:hover {
+      background: var(--ibm-blue-hover);
+    }
+    
+    @media (min-width: 672px) {
+      .btn-primary {
+        display: inline-block;
+      }
+    }
+    
+    .menu-btn {
+      padding: 8px;
+      color: var(--black);
+    }
+    
+    @media (min-width: 672px) {
+      .menu-btn {
+        display: none;
+      }
+    }
+    
+    .mobile-menu {
+      display: none;
+      background: var(--white);
+      border-top: 1px solid var(--gray-200);
+      padding: 16px;
+    }
+    
+    .mobile-menu.open {
+      display: block;
+    }
+    
+    .mobile-nav-link {
+      display: block;
+      padding: 12px 0;
+      font-size: 14px;
+      color: var(--black);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .mobile-nav-link:hover {
+      color: var(--ibm-blue);
+    }
+    
+    .mobile-btn {
+      display: block;
+      width: 100%;
+      margin-top: 16px;
+      background: var(--ibm-blue);
+      color: var(--white);
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+    
+    /* Hero */
+    .hero {
+      padding: 96px 16px 64px;
+      background: var(--white);
+    }
+    
+    @media (min-width: 672px) {
+      .hero {
+        padding: 128px 32px 96px;
+      }
+    }
+    
+    @media (min-width: 1056px) {
+      .hero {
+        padding: 128px 64px 96px;
+      }
+    }
+    
+    .container {
+      max-width: 1584px;
+      margin: 0 auto;
+    }
+    
+    .label {
+      font-size: 12px;
+      color: var(--gray-700);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
+    }
+    
+    .hero-title {
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--black);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    
+    @media (min-width: 672px) {
+      .hero-title {
+        font-size: 48px;
+      }
+    }
+    
+    @media (min-width: 1056px) {
+      .hero-title {
+        font-size: 60px;
+      }
+    }
+    
+    .hero-title span {
+      font-weight: 400;
+    }
+    
+    .hero-text {
+      font-size: 18px;
+      color: var(--gray-700);
+      max-width: 640px;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    
+    @media (min-width: 672px) {
+      .hero-text {
+        font-size: 20px;
+      }
+    }
+    
+    .hero-text strong {
+      color: var(--black);
+      font-weight: 400;
+    }
+    
+    .hero-subtext {
+      font-size: 14px;
+      color: var(--gray-700);
+      margin-bottom: 40px;
+    }
+    
+    .hero-subtext strong {
+      color: var(--black);
+      font-weight: 500;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--ibm-blue);
+      padding: 12px 16px;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      transition: background 0.15s;
+    }
+    
+    .btn-secondary:hover {
+      background: #e5f0ff;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--gray-200);
+    }
+    
+    @media (min-width: 672px) {
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    .stat-item {
+      background: var(--white);
+      padding: 24px;
+    }
+    
+    @media (min-width: 672px) {
+      .stat-item {
+        padding: 32px;
+      }
+    }
+    
+    .stat-value {
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+    
+    @media (min-width: 672px) {
+      .stat-value {
+        font-size: 40px;
+      }
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      color: var(--gray-700);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    /* Sections */
+    .section {
+      padding: 64px 16px;
+    }
+    
+    @media (min-width: 672px) {
+      .section {
+        padding: 96px 32px;
+      }
+    }
+    
+    @media (min-width: 1056px) {
+      .section {
+        padding: 96px 64px;
+      }
+    }
+    
+    .section-gray {
+      background: var(--gray-100);
+    }
+    
+    .section-header {
+      margin-bottom: 48px;
+    }
+    
+    .section-title {
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+    
+    @media (min-width: 672px) {
+      .section-title {
+        font-size: 36px;
+      }
+    }
+    
+    .section-text {
+      font-size: 16px;
+      color: var(--gray-700);
+      max-width: 512px;
+    }
+    
+    .section-link {
+      font-size: 14px;
+      color: var(--ibm-blue);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 16px;
+    }
+    
+    .section-link:hover {
+      text-decoration: underline;
+    }
+    
+    .section-header-row {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 48px;
+    }
+    
+    @media (min-width: 672px) {
+      .section-header-row {
+        flex-direction: row;
+        align-items: flex-end;
+      }
+    }
+    
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      gap: 16px;
+    }
+    
+    @media (min-width: 672px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1056px) {
+      .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      padding: 24px;
+      transition: border-color 0.15s;
+      cursor: pointer;
+    }
+    
+    .card:hover {
+      border-color: var(--ibm-blue);
+    }
+    
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 16px;
+      color: var(--ibm-blue);
+    }
+    
+    .card-label {
+      font-size: 12px;
+      color: var(--gray-700);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+    
+    .card-title {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+    
+    .card-text {
+      font-size: 14px;
+      color: var(--gray-700);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    
+    .card-link {
+      font-size: 14px;
+      color: var(--ibm-blue);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .card-link:hover {
+      text-decoration: underline;
+    }
+    
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .tag {
+      padding: 4px 8px;
+      background: var(--gray-100);
+      font-size: 12px;
+      color: var(--gray-700);
+    }
+    
+    /* Solutions */
+    .solutions-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--gray-100);
+      margin-bottom: 40px;
+    }
+    
+    .solutions-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--ibm-blue);
+    }
+    
+    .solutions-badge-text {
+      font-size: 14px;
+      color: var(--black);
+    }
+    
+    .solutions-layout {
+      display: grid;
+      gap: 32px;
+    }
+    
+    @media (min-width: 1056px) {
+      .solutions-layout {
+        grid-template-columns: 1fr 2fr;
+      }
+    }
+    
+    .tabs-list {
+      border-left: 2px solid var(--gray-200);
+    }
+    
+    .tab-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 16px;
+      text-align: left;
+      font-size: 14px;
+      border-left: 2px solid transparent;
+      margin-left: -2px;
+      transition: all 0.15s;
+    }
+    
+    .tab-btn:hover {
+      background: var(--gray-100);
+    }
+    
+    .tab-btn.active {
+      border-left-color: var(--ibm-blue);
+      background: var(--gray-100);
+    }
+    
+    .tab-btn-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--gray-700);
+    }
+    
+    .tab-btn.active .tab-btn-icon {
+      color: var(--ibm-blue);
+    }
+    
+    .tab-btn-text {
+      color: var(--gray-700);
+    }
+    
+    .tab-btn.active .tab-btn-text {
+      color: var(--black);
+      font-weight: 500;
+    }
+    
+    .tab-content {
+      background: var(--gray-100);
+      padding: 32px;
+    }
+    
+    .tab-content-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    
+    .tab-content-icon {
+      width: 32px;
+      height: 32px;
+      color: var(--ibm-blue);
+    }
+    
+    .tab-content-title {
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--black);
+    }
+    
+    .tab-content-text {
+      font-size: 16px;
+      color: var(--gray-700);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    
+    .features-grid {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    
+    @media (min-width: 672px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    
+    .feature-icon {
+      width: 16px;
+      height: 16px;
+      color: var(--ibm-blue);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    
+    .feature-text {
+      font-size: 14px;
+      color: var(--black);
+    }
+    
+    /* Blog */
+    .blog-card-category {
+      display: inline-block;
+      padding: 4px 8px;
+      background: var(--gray-100);
+      font-size: 12px;
+      color: var(--gray-700);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    
+    .blog-card-title {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--black);
+      margin-bottom: 12px;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .card:hover .blog-card-title {
+      color: var(--ibm-blue);
+    }
+    
+    .blog-card-text {
+      font-size: 14px;
+      color: var(--gray-700);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .blog-card-meta {
+      display: flex;
+      gap: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-200);
+      font-size: 12px;
+      color: var(--gray-700);
+    }
+    
+    .blog-card-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    /* Events */
+    .event-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    
+    .event-tab {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      background: var(--gray-100);
+      color: var(--black);
+      transition: all 0.15s;
+    }
+    
+    .event-tab:hover {
+      background: var(--gray-200);
+    }
+    
+    .event-tab.active {
+      background: var(--black);
+      color: var(--white);
+    }
+    
+    .event-layout {
+      display: grid;
+      gap: 32px;
+    }
+    
+    @media (min-width: 1056px) {
+      .event-layout {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .event-visual {
+      aspect-ratio: 4/3;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .event-visual-icon {
+      width: 128px;
+      height: 128px;
+      color: var(--ibm-blue);
+      opacity: 0.6;
+    }
+    
+    .event-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: var(--ibm-blue);
+      color: var(--white);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+    
+    .event-title {
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+    
+    @media (min-width: 672px) {
+      .event-title {
+        font-size: 30px;
+      }
+    }
+    
+    .event-text {
+      font-size: 16px;
+      color: var(--gray-700);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    
+    .event-details {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    
+    .event-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      background: var(--gray-100);
+    }
+    
+    .event-detail-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--ibm-blue);
+    }
+    
+    .event-detail-label {
+      font-size: 12px;
+      color: var(--gray-700);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+    
+    .event-detail-value {
+      font-size: 14px;
+      color: var(--black);
+    }
+    
+    /* Projects */
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    
+    .project-card-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .project-card-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--ibm-blue);
+    }
+    
+    .project-card-date {
+      font-size: 12px;
+      color: var(--gray-700);
+    }
+    
+    .project-card-title {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--black);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .card:hover .project-card-title {
+      color: var(--ibm-blue);
+    }
+    
+    .project-card-arrow {
+      width: 16px;
+      height: 16px;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+    
+    .card:hover .project-card-arrow {
+      opacity: 1;
+    }
+    
+    .project-card-text {
+      font-size: 14px;
+      color: var(--gray-700);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 64px 16px 32px;
+    }
+    
+    @media (min-width: 672px) {
+      .footer {
+        padding: 64px 32px 32px;
+      }
+    }
+    
+    @media (min-width: 1056px) {
+      .footer {
+        padding: 64px 64px 32px;
+      }
+    }
+    
+    .footer-grid {
+      display: grid;
+      gap: 40px;
+      margin-bottom: 64px;
+    }
+    
+    @media (min-width: 672px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1056px) {
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    .footer-logo {
+      font-size: 16px;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    
+    .footer-logo-bold {
+      font-weight: 600;
+    }
+    
+    .footer-logo-light {
+      color: var(--gray-400);
+      font-weight: 400;
+    }
+    
+    .footer-text {
+      font-size: 14px;
+      color: var(--gray-400);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .footer-social {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-400);
+      transition: all 0.15s;
+    }
+    
+    .footer-social:hover {
+      color: var(--white);
+      background: var(--gray-800);
+    }
+    
+    .footer-social svg {
+      width: 16px;
+      height: 16px;
+    }
+    
+    .footer-title {
+      font-size: 12px;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      font-size: 14px;
+      color: var(--gray-400);
+      transition: color 0.15s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--white);
+    }
+    
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    
+    .footer-contact-icon {
+      width: 16px;
+      height: 16px;
+      color: var(--ibm-blue);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    
+    .footer-contact-text {
+      font-size: 14px;
+      color: var(--gray-400);
+    }
+    
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid var(--gray-800);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    @media (min-width: 672px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    
+    .footer-copyright {
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+    
+    .footer-copyright span {
+      color: var(--white);
+    }
+    
+    .footer-top-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      font-size: 14px;
+      color: var(--gray-400);
+      transition: all 0.15s;
+    }
+    
+    .footer-top-btn:hover {
+      color: var(--white);
+      background: var(--gray-800);
+    }
+    
+    .footer-top-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+    
+    /* Tab content visibility */
+    .tab-panel {
+      display: none;
+    }
+    
+    .tab-panel.active {
+      display: block;
+    }
+    
+    /* Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#home" class="logo">
+        <span class="logo-bold"><img src="Recott_SinFondo6.svg" alt=""></span><!-- <span class="logo-light"> servicios</span> -->
+        <!-- <img src="Recott_SinFondo4.png" alt=""> -->
+      </a>
+      <nav class="nav-desktop">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#portfolio" class="nav-link">Portafolio</a>
+        <a href="#solutions" class="nav-link">Soluciones</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <!-- <a href="#events" class="nav-link">Eventos</a> -->
+        <a href="#projects"class="nav-link">Proyectos</a>
+      </nav>
+      <button class="btn-primary" onclick="scrollToSection('contact')">Contáctanos</button>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+        <svg id="menu-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg id="close-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#home" class="mobile-nav-link" onclick="closeMenu()">Home</a>
+      <a href="#portfolio" class="mobile-nav-link" onclick="closeMenu()">Portafolio</a>
+      <a href="#solutions" class="mobile-nav-link" onclick="closeMenu()">Soluciones</a>
+      <a href="#blog" class="mobile-nav-link" onclick="closeMenu()">Blog</a>
+      <a href="#events" class="mobile-nav-link" onclick="closeMenu()">Eventos</a>
+      <button class="mobile-btn" onclick="scrollToSection('contact'); closeMenu()">Contáctanos</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container">
+      <p class="label">Welcome to</p>
+      <h1 class="hero-title">RECOTT <span>servicios</span></h1>
+      <p class="hero-text">
+      Integramos servicios de Tecnología, brindando <strong>seguridad</strong> y <strong>respaldo</strong>.
+      <span class="hero-subtext"> -- Nuestro diferenciador: <strong>"Servicio al cliente"</strong></span></p>
+      <!-- <p class="hero-text">Integramos servicios de Tecnología, brindando <strong>seguridad</strong> y <strong>respaldo</strong>.</p>
+      <p class="hero-subtext">Nuestro diferenciador: <strong>"Servicio al cliente"</strong></p> -->
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="scrollToSection('portfolio')">
+          Explorar servicios
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:8px">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        <button class="btn-secondary" onclick="scrollToSection('contact')">Contáctanos</button>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">25+</div>
+          <div class="stat-label">Años de experiencia</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">500+</div>
+          <div class="stat-label">Proyectos exitosos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">200+</div>
+          <div class="stat-label">Clientes satisfechos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">50+</div>
+          <div class="stat-label">Expertos TI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="section section-gray" id="portfolio">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="label">Servicios</p>
+        <h2 class="section-title">Nuestro Portafolio</h2>
+        <p class="section-text">Soluciones integrales de tecnología diseñadas para impulsar tu negocio</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card fade-in">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+          </svg>
+          <p class="card-label">Tecnologías de la información</p>
+          <h3 class="card-title">Consultoría</h3>
+          <p class="card-text">Asesoramiento experto en iniciativas de tecnología, procesos y modelos de negocio.</p>
+          <a href="#" class="card-link">Ver más <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+        <div class="card fade-in">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+          </svg>
+          <p class="card-label">Servicios TI con proveedores</p>
+          <h3 class="card-title">Integración</h3>
+          <p class="card-text">Investigación de proveedores y las mejores soluciones del mercado para tu negocio.</p>
+          <a href="#" class="card-link">Ver más <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+        <div class="card fade-in">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+          </svg>
+          <p class="card-label">Project Management Dev/Infra</p>
+          <h3 class="card-title">Admin. y Control</h3>
+          <p class="card-text">Administración y control de proyectos para entregas en tiempo y forma.</p>
+          <a href="#" class="card-link">Ver más <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+        <div class="card fade-in">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+          </svg>
+          <p class="card-label">Reclutamiento y selección TI</p>
+          <h3 class="card-title">Reclutamiento</h3>
+          <p class="card-text">Seleccionamos los mejores perfiles de TI para tu organización.</p>
+          <a href="#" class="card-link">Ver más <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+        <div class="card fade-in">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <p class="card-label">Soporte y capacitación</p>
+          <h3 class="card-title">Soporte</h3>
+          <p class="card-text">Pólizas de soporte integradas con los mejores proveedores de servicios.</p>
+          <a href="#" class="card-link">Ver más <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+        <div class="card fade-in">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+            <rect x="9" y="9" width="6" height="6"></rect>
+            <line x1="9" y1="1" x2="9" y2="4"></line>
+            <line x1="15" y1="1" x2="15" y2="4"></line>
+            <line x1="9" y1="20" x2="9" y2="23"></line>
+            <line x1="15" y1="20" x2="15" y2="23"></line>
+            <line x1="20" y1="9" x2="23" y2="9"></line>
+            <line x1="20" y1="14" x2="23" y2="14"></line>
+            <line x1="1" y1="9" x2="4" y2="9"></line>
+            <line x1="1" y1="14" x2="4" y2="14"></line>
+          </svg>
+          <p class="card-label">Espacios y rendimiento</p>
+          <h3 class="card-title">Optimización</h3>
+          <p class="card-text">Asesoramiento en manejo de espacios y rendimiento para tu personal.</p>
+          <a href="#" class="card-link">Ver más <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="section" id="solutions">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="label">Soluciones</p>
+        <h2 class="section-title">Nuestras Soluciones</h2>
+        <p class="section-text">Asesoramos a nuestros clientes sobre Tecnologías de la Información para que tomen las mejores decisiones que les proporcionen valor agregado a sus procesos.</p>
+      </div>
+      <div class="solutions-badge fade-in">
+        <div class="solutions-badge-dot"></div>
+        <span class="solutions-badge-text">Más de 25 años nos respaldan en el ramo de las TIC's</span>
+      </div>
+      <div class="solutions-layout fade-in">
+        <div class="tabs-list">
+          <button class="tab-btn active" onclick="switchTab('consultoria', this)">
+            <svg class="tab-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+            <span class="tab-btn-text">Consultoría</span>
+          </button>
+          <button class="tab-btn" onclick="switchTab('integracion', this)">
+            <svg class="tab-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+            </svg>
+            <span class="tab-btn-text">Integración</span>
+          </button>
+          <button class="tab-btn" onclick="switchTab('administracion', this)">
+            <svg class="tab-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+            </svg>
+            <span class="tab-btn-text">Administración de Proyectos</span>
+          </button>
+          <button class="tab-btn" onclick="switchTab('reclutamiento', this)">
+            <svg class="tab-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+            </svg>
+            <span class="tab-btn-text">Reclutamiento TI</span>
+          </button>
+          <button class="tab-btn" onclick="switchTab('soporte', this)">
+            <svg class="tab-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <span class="tab-btn-text">Soporte Técnico</span>
+          </button>
+          <button class="tab-btn" onclick="switchTab('espacios', this)">
+            <svg class="tab-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+              <rect x="9" y="9" width="6" height="6"></rect>
+              <line x1="9" y1="1" x2="9" y2="4"></line>
+              <line x1="15" y1="1" x2="15" y2="4"></line>
+              <line x1="9" y1="20" x2="9" y2="23"></line>
+              <line x1="15" y1="20" x2="15" y2="23"></line>
+              <line x1="20" y1="9" x2="23" y2="9"></line>
+              <line x1="20" y1="14" x2="23" y2="14"></line>
+              <line x1="1" y1="9" x2="4" y2="9"></line>
+              <line x1="1" y1="14" x2="4" y2="14"></line>
+            </svg>
+            <span class="tab-btn-text">Espacios y Rendimiento</span>
+          </button>
+        </div>
+        <div class="tab-content">
+          <div id="tab-consultoria" class="tab-panel active">
+            <div class="tab-content-header">
+              <svg class="tab-content-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+              <h3 class="tab-content-title">Consultoría</h3>
+            </div>
+            <p class="tab-content-text">Asesoramiento sobre iniciativas de Tecnología, procesos y modelos de negocio.</p>
+            <div class="features-grid">
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Análisis de procesos empresariales</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Estrategia de transformación digital</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Evaluación de infraestructura TI</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Roadmap tecnológico personalizado</span>
+              </div>
+            </div>
+            <button class="btn-primary">Solicitar información <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:8px"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </div>
+          <div id="tab-integracion" class="tab-panel">
+            <div class="tab-content-header">
+              <svg class="tab-content-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+              </svg>
+              <h3 class="tab-content-title">Integración</h3>
+            </div>
+            <p class="tab-content-text">Investigación de proveedores y las mejores soluciones del mercado.</p>
+            <div class="features-grid">
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Selección de proveedores tecnológicos</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Integración de sistemas heterogéneos</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Implementación de soluciones cloud</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Migración de datos segura</span>
+              </div>
+            </div>
+            <button class="btn-primary">Solicitar información <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:8px"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </div>
+          <div id="tab-administracion" class="tab-panel">
+            <div class="tab-content-header">
+              <svg class="tab-content-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+              </svg>
+              <h3 class="tab-content-title">Administración de Proyectos</h3>
+            </div>
+            <p class="tab-content-text">Administración y control de proyectos para entregas en tiempo y forma.</p>
+            <div class="features-grid">
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Gestión ágil (Scrum/Kanban)</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Control de tiempos y recursos</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Gestión de riesgos</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Reportes ejecutivos</span>
+              </div>
+            </div>
+            <button class="btn-primary">Solicitar información <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:8px"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </div>
+          <div id="tab-reclutamiento" class="tab-panel">
+            <div class="tab-content-header">
+              <svg class="tab-content-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+              </svg>
+              <h3 class="tab-content-title">Reclutamiento TI</h3>
+            </div>
+            <p class="tab-content-text">Seleccionamos los mejores perfiles de TI para tu negocio.</p>
+            <div class="features-grid">
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Búsqueda de talento especializado</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Evaluación técnica de candidatos</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Perfiles Dev, Infra, Seguridad</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Contratación flexible</span>
+              </div>
+            </div>
+            <button class="btn-primary">Solicitar información <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:8px"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </div>
+          <div id="tab-soporte" class="tab-panel">
+            <div class="tab-content-header">
+              <svg class="tab-content-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+              </svg>
+              <h3 class="tab-content-title">Soporte Técnico</h3>
+            </div>
+            <p class="tab-content-text">Pólizas de soporte con los mejores proveedores de servicios.</p>
+            <div class="features-grid">
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Soporte 24/7/365</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Mesa de ayuda especializada</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Resolución remota y presencial</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Capacitación continua</span>
+              </div>
+            </div>
+            <button class="btn-primary">Solicitar información <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:8px"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </div>
+          <div id="tab-espacios" class="tab-panel">
+            <div class="tab-content-header">
+              <svg class="tab-content-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                <rect x="9" y="9" width="6" height="6"></rect>
+                <line x1="9" y1="1" x2="9" y2="4"></line>
+                <line x1="15" y1="1" x2="15" y2="4"></line>
+                <line x1="9" y1="20" x2="9" y2="23"></line>
+                <line x1="15" y1="20" x2="15" y2="23"></line>
+                <line x1="20" y1="9" x2="23" y2="9"></line>
+                <line x1="20" y1="14" x2="23" y2="14"></line>
+                <line x1="1" y1="9" x2="4" y2="9"></line>
+                <line x1="1" y1="14" x2="4" y2="14"></line>
+              </svg>
+              <h3 class="tab-content-title">Espacios y Rendimiento</h3>
+            </div>
+            <p class="tab-content-text">Asesoramiento en manejo de espacios y rendimiento.</p>
+            <div class="features-grid">
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Diseño de oficinas ergonómicas</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Optimización de espacios</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Wellness y productividad</span>
+              </div>
+              <div class="feature-item">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="feature-text">Espacios colaborativos</span>
+              </div>
+            </div>
+            <button class="btn-primary">Solicitar información <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:8px"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section class="section section-gray" id="blog">
+    <div class="container">
+      <div class="section-header-row fade-in">
+        <div>
+          <p class="label">Conocimiento</p>
+          <h2 class="section-title">Nuestro Blog</h2>
+        </div>
+        <a href="#" class="section-link">Ver todos los artículos <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+      </div>
+      <div class="cards-grid">
+        <article class="card fade-in">
+          <span class="blog-card-category">Project Management</span>
+          <h3 class="blog-card-title">PM como STAFF</h3>
+          <p class="blog-card-text">Reúnete con tu Project Manager antes de comenzar cualquier proyecto. Identifica los riesgos y cuida la estimación de tiempos y esfuerzos para estructurar y organizar de manera óptima tus iniciativas.</p>
+          <div class="blog-card-meta">
+            <span class="blog-card-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Enero 2025
+            </span>
+            <span class="blog-card-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              5 min
+            </span>
+          </div>
+        </article>
+        <article class="card fade-in">
+          <span class="blog-card-category">Inteligencia Artificial</span>
+          <h3 class="blog-card-title">Tecnología / IA</h3>
+          <p class="blog-card-text">La tecnología de punta realmente puede ayudar a resolver los problemas de mi negocio. Sin embargo, en ocasiones es necesario primero analizar los procesos para identificar las fallas.</p>
+          <div class="blog-card-meta">
+            <span class="blog-card-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Enero 2025
+            </span>
+            <span class="blog-card-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              7 min
+            </span>
+          </div>
+        </article>
+        <article class="card fade-in">
+          <span class="blog-card-category">Productividad</span>
+          <h3 class="blog-card-title">Espacios y Rendimiento</h3>
+          <p class="blog-card-text">¿La organización y decoración de tus oficinas proporcionan el ambiente y la comodidad justos para generar el rendimiento y la concentración necesarios para tus recursos?</p>
+          <div class="blog-card-meta">
+            <span class="blog-card-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Enero 2025
+            </span>
+            <span class="blog-card-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              4 min
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <!-- <section class="section" id="events">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="label">Bienestar</p>
+        <h2 class="section-title">Nuestros Eventos</h2>
+        <p class="section-text">Actividades de recreación que elevan el espíritu, generan relajación garantizada y descanso integral. Para retomar las actividades cotidianas con entusiasmo y productividad al 100%.</p>
+      </div>
+      <div class="event-tabs fade-in">
+        <button class="event-tab active" onclick="switchEvent(0, this)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 19l4 4 4-4M8 5l4-4 4 4M20 12H4"/></svg>
+          Trekking
+        </button>
+        <button class="event-tab" onclick="switchEvent(1, this)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 1 1.261-.472 1.855-1.24 2.344-2.5M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.24-2.344-2.5M8 14v.5M16 14v.5M12 14v.5M12 21a7 7 0 007-7c0-2.38-1.4-4.4-3.5-5.38"/></svg>
+          Trekking with Dogs
+        </button>
+        <button class="event-tab" onclick="switchEvent(2, this)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+          Gravel Bike
+        </button>
+      </div>
+      <div class="event-layout fade-in">
+        <div class="event-visual">
+          <svg id="event-icon" class="event-visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M8 19l4 4 4-4M8 5l4-4 4 4M20 12H4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="event-badge">
+            <svg id="event-badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 19l4 4 4-4M8 5l4-4 4 4M20 12H4"/></svg>
+            <span>Actividad al aire libre</span>
+          </div>
+          <h3 id="event-title" class="event-title">Trekking</h3>
+          <p id="event-description" class="event-text">Modalidad de excursionismo que consiste en recorrer a pie largas distancias o zonas determinadas, generalmente de alta montaña y poco frecuentadas por el turismo convencional.</p>
+          <div class="event-details">
+            <div class="event-detail">
+              <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <div>
+                <p class="event-detail-label">Fecha</p>
+                <p id="event-date" class="event-detail-value">Enero 2025</p>
+              </div>
+            </div>
+            <div class="event-detail">
+              <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div>
+                <p class="event-detail-label">Ubicación</p>
+                <p id="event-location" class="event-detail-value">Sierra de Sonora</p>
+              </div>
+            </div>
+            <div class="event-detail">
+              <svg class="event-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"></path></svg>
+              <div>
+                <p class="event-detail-label">Participantes</p>
+                <p id="event-participants" class="event-detail-value">15-20 personas</p>
+              </div>
+            </div>
+          </div>
+          <button class="btn-primary">Inscribirme al evento <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:8px"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Projects -->
+  <section class="section section-gray" id="projects">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="label">Casos de Éxito</p>
+        <h2 class="section-title">Nuestros Proyectos</h2>
+        <p class="section-text">Descubre cómo hemos ayudado a empresas a transformar sus operaciones mediante soluciones tecnológicas innovadoras.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card fade-in">
+          <div class="project-card-header">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+            </div>
+            <span class="project-card-date">Enero 2023</span>
+          </div>
+          <h3 class="project-card-title">METHOD <svg class="project-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></h3>
+          <p class="project-card-text">Implementamos y acoplamos la metodología que mejor se adapte a las necesidades de tu organización.</p>
+          <div class="tags">
+            <span class="tag">Agile</span>
+            <span class="tag">Scrum</span>
+            <span class="tag">Kanban</span>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <div class="project-card-header">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <span class="project-card-date">Noviembre 2020</span>
+          </div>
+          <h3 class="project-card-title">DEV <svg class="project-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></h3>
+          <p class="project-card-text">Desarrollamos software a la medida y damos mantenimiento a los sistemas existentes.</p>
+          <div class="tags">
+            <span class="tag">Full Stack</span>
+            <span class="tag">Web</span>
+            <span class="tag">Mobile</span>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <div class="project-card-header">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            </div>
+            <span class="project-card-date">Octubre 2023</span>
+          </div>
+          <h3 class="project-card-title">BPA, RPA y DPA <svg class="project-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></h3>
+          <p class="project-card-text">Automatiza tus procesos, optimizando tiempos y esfuerzo para un mejor desempeño y servicio.</p>
+          <div class="tags">
+            <span class="tag">Automatización</span>
+            <span class="tag">Bots</span>
+            <span class="tag">Workflows</span>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <div class="project-card-header">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </div>
+            <span class="project-card-date">Abril 2021</span>
+          </div>
+          <h3 class="project-card-title">BMS <svg class="project-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></h3>
+          <p class="project-card-text">Building Management System, gestiona tus edificaciones por medio de software y hardware.</p>
+          <div class="tags">
+            <span class="tag">IoT</span>
+            <span class="tag">Smart Building</span>
+            <span class="tag">Control</span>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <div class="project-card-header">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <span class="project-card-date">Octubre 2023</span>
+          </div>
+          <h3 class="project-card-title">GPS Monitor <svg class="project-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></h3>
+          <p class="project-card-text">Monitorea tus unidades mediante GPS y sensores que te alertan dependiendo tus necesidades.</p>
+          <div class="tags">
+            <span class="tag">GPS</span>
+            <span class="tag">Tracking</span>
+            <span class="tag">Alertas</span>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <div class="project-card-header">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+            </div>
+            <span class="project-card-date">Abril 2021</span>
+          </div>
+          <h3 class="project-card-title">TELEMETRÍA <svg class="project-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></h3>
+          <p class="project-card-text">Tecnología que permite la medición remota de magnitudes físicas y el envío de información.</p>
+          <div class="tags">
+            <span class="tag">Sensores</span>
+            <span class="tag">Datos</span>
+            <span class="tag">IoT</span>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <div class="project-card-header">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <span class="project-card-date">Octubre 2023</span>
+          </div>
+          <h3 class="project-card-title">INFRA TI <svg class="project-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></h3>
+          <p class="project-card-text">Implementamos, auditamos y asesoramos sobre tu infraestructura de TI.</p>
+          <div class="tags">
+            <span class="tag">Cloud</span>
+            <span class="tag">On-premise</span>
+            <span class="tag">Híbrida</span>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <div class="project-card-header">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <span class="project-card-date">Octubre 2023</span>
+          </div>
+          <h3 class="project-card-title">NOC <svg class="project-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></h3>
+          <p class="project-card-text">Network Operation Center. Centro de control centralizado para supervisar y gestionar sistemas.</p>
+          <div class="tags">
+            <span class="tag">Monitoreo</span>
+            <span class="tag">24/7</span>
+            <span class="tag">Redes</span>
+          </div>
+        </div>
+        <div class="card fade-in">
+          <div class="project-card-header">
+            <div class="project-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <span class="project-card-date">Abril 2021</span>
+          </div>
+          <h3 class="project-card-title">CONSULTORÍA <svg class="project-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></h3>
+          <p class="project-card-text">Solicita de inicio la consultoría necesaria para cubrir tus necesidades de la mejor forma.</p>
+          <div class="tags">
+            <span class="tag">Asesoría</span>
+            <span class="tag">Estrategia</span>
+            <span class="tag">Planificación</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#home" onclick="scrollToTop(); return false;" class="footer-logo">
+            <span class="footer-logo-bold">RECOTT</span><span class="footer-logo-light"> servicios</span>
+          </a>
+          <p class="footer-text">Más de 25 años de experiencia integrando servicios de tecnología, brindando seguridad y respaldo a empresas de todos los tamaños.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/recottintegrador" target="_blank" rel="noopener" class="footer-social" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+            </a>
+            <a href="https://pmlugh.github.io/recott.github.io/Market74/" target="_blank" rel="noopener" class="footer-social" aria-label="Marketer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m6 6l4-4m0 0l4 4m-4-4v12"></path></svg>
+            </a>
+            <a href="https://github.com/dashboard" target="_blank" rel="noopener" class="footer-social" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path></svg>
+            </a>
+            <a href="https://roadmap.sh/" target="_blank" rel="noopener" class="footer-social" aria-label="RoadMap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Enlaces Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Portafolio</a></li>
+            <li><a href="#solutions">Soluciones</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <!-- <li><a href="#events">Eventos</a></li> -->
+            <li><a href="#projects">Proyectos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Contacto</h4>
+          <div class="footer-contact-item">
+            <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span class="footer-contact-text">Valle de Moreno S/N, Priv. del Rey</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span class="footer-contact-text">Hermosillo, Sonora 83118, MX</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+            <span class="footer-contact-text">+52 662 342 5565</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+            <span class="footer-contact-text">+52 473 181 7324</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span class="footer-contact-text">contacto@recott.com.mx</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Tecnologías</h4>
+          <ul class="footer-links">
+            <li><a href="https://learn.microsoft.com/es-es/training/" target="_blank" rel="noopener">Microsoft</a></li>
+            <li><a href="https://www.ibm.com/mx-es" target="_blank" rel="noopener">IBM</a></li>
+            <li><a href="https://www.lenovo.com/mx/es/" target="_blank" rel="noopener">Lenovo</a></li>
+            <li><a href="https://www.dell.com/premier/home/MX/es/RC1551808" target="_blank" rel="noopener">Dell</a></li>
+            <li><a href="https://www.nvidia.com/es-la/" target="_blank" rel="noopener">Nvidia</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2008–2026 <span>RECOTT servicios</span>. Todos los derechos reservados.</p>
+        <button class="footer-top-btn" onclick="scrollToTop()">
+          Volver arriba
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+      menu.classList.toggle('open');
+      if (menu.classList.contains('open')) {
+        menuIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+      } else {
+        menuIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+      }
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+      menu.classList.remove('open');
+      menuIcon.style.display = 'block';
+      closeIcon.style.display = 'none';
+    }
+
+    // Scroll functions
+    function scrollToSection(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Tab switching for Solutions
+    function switchTab(tabId, btn) {
+      // Remove active from all tabs
+      document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      
+      // Add active to clicked tab
+      btn.classList.add('active');
+      document.getElementById('tab-' + tabId).classList.add('active');
+    }
+
+    // Event data
+    const eventData = [
+      {
+        title: 'Trekking',
+        description: 'Modalidad de excursionismo que consiste en recorrer a pie largas distancias o zonas determinadas, generalmente de alta montaña y poco frecuentadas por el turismo convencional.',
+        date: 'Enero 2025',
+        location: 'Sierra de Sonora',
+        participants: '15-20 personas',
+        icon: '<path d="M8 19l4 4 4-4M8 5l4-4 4 4M20 12H4"/>'
+      },
+      {
+        title: 'Trekking with Dogs',
+        description: 'Modalidad de excursionismo que consiste en recorrer a pie largas distancias o zonas determinadas, generalmente de alta montaña, acompañado de tu mejor amigo de cuatro patas.',
+        date: 'Febrero 2025',
+        location: 'Senderos pet-friendly',
+        participants: '10-15 personas + perros',
+        icon: '<path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 1 1.261-.472 1.855-1.24 2.344-2.5M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.24-2.344-2.5M8 14v.5M16 14v.5M12 14v.5M12 21a7 7 0 007-7c0-2.38-1.4-4.4-3.5-5.38"/>'
+      },
+      {
+        title: 'Gravel Bike',
+        description: 'El gravel es una modalidad de ciclismo que se práctica sobre una bicicleta que se parece en su geometría a las bicis de carretera, pero con el cuadro y las ruedas adaptadas para poder ser utilizadas también fuera del asfalto.',
+        date: 'Marzo 2025',
+        location: 'Rutas mixtas Sonora',
+        participants: '20-30 ciclistas',
+        icon: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>'
+      }
+    ];
+
+    // Event switching
+    function switchEvent(index, btn) {
+      // Remove active from all tabs
+      document.querySelectorAll('.event-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Update content
+      const data = eventData[index];
+      document.getElementById('event-title').textContent = data.title;
+      document.getElementById('event-description').textContent = data.description;
+      document.getElementById('event-date').textContent = data.date;
+      document.getElementById('event-location').textContent = data.location;
+      document.getElementById('event-participants').textContent = data.participants;
+      document.getElementById('event-icon').innerHTML = data.icon;
+      document.getElementById('event-badge-icon').innerHTML = data.icon;
+    }
+
+    // Fade in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
